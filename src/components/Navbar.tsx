@@ -34,13 +34,14 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {[
-              { label: 'Service', href: '/' },
+              { label: 'Home', href: '/' },
               { label: 'Solution', href: '/solutions' },
               { label: 'About', href: '/about' },
               { label: 'Gallery', href: '/gallery' },
               { label: 'Testimonials', href: '/testimonials' },
               { label: 'Teams', href: '/teams' },
-              { label: 'Contact', href: '/contact' }
+              { label: 'Contact', href: '/contact' },
+              { label: 'Platform', href: '/platform' }
             ].map((item, idx) => (
               <a
                 key={idx}
@@ -81,7 +82,8 @@ export default function Navbar() {
               { label: 'Gallery', href: '/gallery' },
               { label: 'Testimonials', href: '/testimonials' },
               { label: 'Teams', href: '/teams' },
-              { label: 'Contact', href: '/contact' }
+              { label: 'Contact', href: '/contact' },
+              { label: 'Platform', href: '/platform' }
             ].map((item, idx) => (
               <a
                 key={idx}
