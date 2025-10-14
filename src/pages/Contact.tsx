@@ -64,7 +64,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Address</h3>
-                    <p className="text-gray-400">Gurgaon, Haryana, India</p>
+                    <p className="text-gray-400">Office address:   5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002</p>
                   </div>
                 </div>
 
