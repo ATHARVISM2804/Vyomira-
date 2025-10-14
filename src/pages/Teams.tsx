@@ -68,14 +68,27 @@ export default function Teams() {
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse-slow delay-1000"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="max-w-3xl mb-16 text-center mx-auto animate-fade-in-up">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Meet Our <span className="text-gradient">Team</span>
+          <div className="max-w-3xl mb-20 text-center mx-auto animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-10 leading-tight">
+              Meet the <span className="text-gradient">Minds</span> Behind Vyomira
             </h1>
-            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              World-class experts dedicated to transforming your cloud infrastructure
-              with innovation, security, and excellence.
-            </p>
+            
+            <div className="relative z-10 px-6 py-8 rounded-2xl bg-gradient-to-b from-blue-950/30 to-transparent border border-white/5">
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-6 font-light">
+                A passionate team of DevOps engineers, cloud architects, and security experts driven
+                by <span className="font-medium text-blue-400">one goal</span> — to make your cloud 
+                <span className="font-medium"> secure, compliant, and efficient</span>.
+              </p>
+              
+              <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto my-6 rounded-full"></div>
+              
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-light">
+                Each team member brings hands-on experience from 
+                <span className="font-medium text-blue-400"> AWS, GCP</span>, and enterprise 
+                <span className="font-medium text-cyan-400"> DevSecOps</span> environments — 
+                combining technical depth with strategic insight.
+              </p>
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -120,8 +133,8 @@ export default function Teams() {
           <div className="glassmorphism rounded-2xl p-8 sm:p-12 text-center max-w-3xl mx-auto">
             <h3 className="text-2xl sm:text-3xl font-bold mb-4">Join Our Team</h3>
             <p className="text-gray-400 mb-8">
-              We're always looking for talented individuals who share our passion
-              for innovation and excellence.
+              We're looking for talented cloud engineers, security specialists, and DevOps experts
+              who are passionate about building the future of cloud management.
             </p>
             <a
               href="/contact"

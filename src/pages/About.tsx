@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Users, Shield, Brain, Zap } from 'lucide-react';
+import { Target, Eye, Award, Users, Shield, Brain, Zap, Lock, DollarSign, Code } from 'lucide-react';
 
 export default function About() {
   return (
@@ -8,11 +8,12 @@ export default function About() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              About <span className="text-gradient">Vyomira</span>
+              Engineering <span className="text-gradient">Trust</span> in Every Cloud.
             </h1>
             <p className="text-xl text-gray-400 leading-relaxed">
-              We're building the future of cloud management with AI-powered insights,
-              security-first architecture, and enterprise-grade managed services.
+              Founded with a vision to make cloud infrastructure intelligent, secure, and cost-efficient, 
+              Vyomira Tech Solutions Pvt Ltd delivers enterprise-grade DevOps, security, and cloud automation 
+              services — powered by AI.
             </p>
           </div>
         </div>
@@ -24,9 +25,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-6">
-                To empower businesses with intelligent cloud solutions that drive efficiency,
-                security, and growth. We believe cloud infrastructure should be simple,
-                secure, and cost-effective.
+                To simplify and secure the cloud journey of every business.
               </p>
               <div className="flex items-start space-x-4">
                 <Target className="text-blue-400 mt-1" size={24} />
@@ -41,8 +40,7 @@ export default function About() {
               <Eye className="text-cyan-400 mb-4" size={32} />
               <h2 className="text-4xl font-bold mb-6">Our Vision</h2>
               <p className="text-gray-400 text-lg leading-relaxed">
-                To become the world's most trusted cloud management platform, where every
-                business can harness the full potential of cloud technology without complexity.
+                To be the most trusted partner for intelligent, secure, and compliant cloud operations.
               </p>
             </div>
           </div>
@@ -52,43 +50,52 @@ export default function About() {
       <section className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
-            Why Vyomira is <span className="text-gradient">Different</span>
+            Our <span className="text-gradient">Unique Approach</span>
           </h2>
+
+          <div className="p-8 border border-white/5 rounded-lg bg-gradient-to-br from-blue-950/20 to-transparent mb-16">
+            <p className="text-xl text-center text-gray-300 leading-relaxed">
+              Vyomira bridges the gap between <span className="font-bold text-blue-400">DevOps</span>, 
+              <span className="font-bold text-cyan-400"> Security</span>, and 
+              <span className="font-bold text-green-400"> Finance</span>, empowering organizations 
+              to save costs, stay compliant, and scale with confidence.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group p-8 border border-white/5 rounded-lg hover:border-blue-500/50 transition-all hover:scale-105 duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-                <Shield size={32} />
+                <Code size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Security-First Architecture</h3>
+              <h3 className="text-2xl font-bold mb-4">DevOps</h3>
               <p className="text-gray-400 leading-relaxed">
-                Every feature we build starts with security. From automated compliance scanning
-                to real-time threat detection, we protect your infrastructure 24/7. Our platform
-                is SOC 2 Type II certified and GDPR compliant.
+                Our expert team handles everything from infrastructure setup to CI/CD pipeline optimization. 
+                We implement best practices that ensure your applications are reliable, scalable, and 
+                continuously delivered with confidence.
               </p>
             </div>
 
             <div className="group p-8 border border-white/5 rounded-lg hover:border-blue-500/50 transition-all hover:scale-105 duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-                <Brain size={32} />
+                <Lock size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">AI-Powered Insights</h3>
+              <h3 className="text-2xl font-bold mb-4">Security</h3>
               <p className="text-gray-400 leading-relaxed">
-                Our machine learning algorithms continuously analyze your cloud usage patterns,
-                identifying optimization opportunities you didn't know existed. Save up to 60%
-                on cloud costs with intelligent recommendations.
+                Security is built into everything we do. From automated compliance scanning to 
+                real-time threat detection, our security-first architecture protects your 
+                infrastructure around the clock while meeting industry standards.
               </p>
             </div>
 
             <div className="group p-8 border border-white/5 rounded-lg hover:border-blue-500/50 transition-all hover:scale-105 duration-300">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform">
-                <Zap size={32} />
+                <DollarSign size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Fully Managed Solutions</h3>
+              <h3 className="text-2xl font-bold mb-4">Finance</h3>
               <p className="text-gray-400 leading-relaxed">
-                Our expert DevOps team handles everything from infrastructure setup to 24/7
-                monitoring. You focus on building products while we ensure your cloud
-                infrastructure is optimized, secure, and scalable.
+                Our AI-powered cost optimization tools analyze your cloud usage patterns to identify 
+                savings opportunities, forecast spending, and ensure you're getting maximum value 
+                from your cloud investment.
               </p>
             </div>
           </div>
@@ -103,23 +110,23 @@ export default function About() {
             {[
               {
                 icon: Award,
-                title: 'Excellence',
-                description: 'We strive for perfection in everything we build.'
-              },
-              {
-                icon: Users,
-                title: 'Customer First',
-                description: 'Your success is our success. We prioritize your needs.'
+                title: 'Integrity & Transparency',
+                description: 'We believe in clear communication and honest business practices.'
               },
               {
                 icon: Shield,
-                title: 'Trust',
-                description: 'Security and transparency are non-negotiable.'
+                title: 'Security & Trust',
+                description: 'Your data and infrastructure security are our top priorities.'
               },
               {
-                icon: Zap,
-                title: 'Innovation',
-                description: 'We push boundaries with cutting-edge technology.'
+                icon: Brain,
+                title: 'Innovation & Automation',
+                description: 'We constantly pursue better, smarter ways to solve problems.'
+              },
+              {
+                icon: Users,
+                title: 'Customer-Centric Delivery',
+                description: 'Your success drives everything we build and deliver.'
               }
             ].map((value, idx) => (
               <div key={idx} className="text-center">

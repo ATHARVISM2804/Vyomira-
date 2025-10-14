@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Zap, Cloud, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, Lock } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Cloud, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, Lock, DollarSign, FileCheck, Cog, CreditCard } from 'lucide-react';
 
 export default function Home() {
   const stats = [
@@ -9,12 +9,7 @@ export default function Home() {
   ];
 
   const features = [
-    {
-      icon: Shield,
-      title: 'Security First',
-      description: 'Enterprise-grade security with automated compliance and real-time threat detection.',
-      color: 'from-blue-500 to-cyan-400'
-    },
+   
     {
       icon: Zap,
       title: 'Lightning Fast',
@@ -44,16 +39,71 @@ export default function Home() {
       title: 'Compliance Ready',
       description: 'SOC 2, ISO 27001, HIPAA, and GDPR compliance out of the box.',
       color: 'from-red-500 to-pink-400'
+    },
+    {
+      icon: DollarSign,
+      title: 'Cloud Cost Optimization',
+      description: 'Reduce cloud spending with intelligent resource allocation and optimization.',
+      color: 'from-emerald-500 to-green-400'
+    },
+    {
+      icon: FileCheck,
+      title: 'Security & Compliance Automation',
+      description: 'Automate security checks and compliance protocols across your infrastructure.',
+      color: 'from-orange-500 to-red-400'
+    },
+    {
+      icon: Cog,
+      title: 'DevOps Managed Services',
+      description: 'End-to-end management of your DevOps pipeline for maximum efficiency.',
+      color: 'from-blue-500 to-indigo-400'
+    },
+    {
+      icon: CreditCard,
+      title: 'Cloud Billing Partner',
+      description: 'Consolidated billing and payment optimization for all your cloud providers.',
+      color: 'from-pink-500 to-purple-400'
     }
   ];
 
   const benefits = [
-    'Reduce infrastructure costs by up to 60%',
-    'Deploy faster with automated CI/CD pipelines',
-    '24/7 monitoring and instant alerting',
-    'Scale automatically based on demand',
-    'Enterprise-grade security and compliance',
-    'Expert support from cloud architects'
+    'AI-Driven Cloud Intelligence – Detect anomalies, forecast usage, and optimize spend.',
+    'Security-First Architecture – Identify misconfigurations, enforce compliance, and stay audit-ready.',
+    'Unified Billing & Cost Control – Consolidate AWS, GCP, and Azure payments under one secure roof.',
+    'End-to-End DevOps Expertise – From architecture to automation, we help you build resilient systems.'
+  ];
+
+  const companyLogos = [
+    { 
+      name: 'Fanatics', 
+      logo: '/logos/fanatics.svg',
+      color: 'from-blue-600/20 to-blue-800/20'
+    },
+    { 
+      name: 'Microsoft', 
+      logo: '/logos/microsoft.svg',
+      color: 'from-blue-500/20 to-cyan-500/20' 
+    },
+    { 
+      name: 'GitHub', 
+      logo: '/logos/github.svg',
+      color: 'from-purple-600/20 to-purple-800/20' 
+    },
+    { 
+      name: 'Accenture', 
+      logo: '/logos/accenture.svg',
+      color: 'from-indigo-600/20 to-indigo-800/20' 
+    },
+    { 
+      name: 'Kong', 
+      logo: '/logos/kong.svg',
+      color: 'from-red-600/20 to-red-800/20' 
+    },
+    { 
+      name: 'Dell', 
+      logo: '/logos/dell.svg',
+      color: 'from-cyan-600/20 to-blue-800/20' 
+    },
   ];
 
   return (
@@ -83,7 +133,7 @@ export default function Home() {
               </h1>
 
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl">
-                Power anything from cost optimization to security automation with Vyomira's AI-powered cloud platform & modern admin UI that you truly own.
+                Vyomira Tech Solutions helps organizations take complete control of their cloud ecosystem with AI-powered insights, cost optimization, compliance automation, and managed DevOps services.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -95,10 +145,10 @@ export default function Home() {
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href="/solutions"
+                  href="/platform"
                   className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
                 >
-                  Explore Solutions
+                  Explore Our Platform
                 </a>
               </div>
             </div>
@@ -161,70 +211,93 @@ export default function Home() {
       </section>
 
       <section className="py-16 sm:py-24 lg:py-32 relative z-10 border-t border-white/5">
+        <div className="aurora-blob aurora-blob-2" style={{ top: '30%', right: '15%', opacity: 0.3 }}></div>
+        <div className="aurora-blob aurora-blob-3" style={{ bottom: '10%', left: '20%', opacity: 0.2 }}></div>
         <div className="absolute inset-0 grid-crosses opacity-[0.08]"></div>
+        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="mb-16 sm:mb-20 text-center animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               Trusted by industry <span className="text-gradient">leaders</span>
             </h2>
-            <p className="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
               Vyomira powers mission-critical infrastructure for Fortune 500 companies worldwide
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1 mb-12">
-            {[
-              { name: 'Fanatics', type: 'text' },
-              { name: 'Microsoft', type: 'text' },
-              { name: '⬡', type: 'icon' },
-              { name: '⚙', type: 'icon' },
-              { name: 'accenture', type: 'text' },
-              { name: 'Kong', type: 'text' }
-            ].map((company, idx) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+            {companyLogos.map((company, idx) => (
               <div
                 key={idx}
-                className="relative aspect-square glassmorphism flex items-center justify-center hover:glassmorphism-strong transition-all duration-300 group cursor-pointer"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-300 rounded"></div>
-                {company.type === 'icon' ? (
-                  <div className="text-4xl sm:text-5xl opacity-40 group-hover:opacity-60 transition-opacity">{company.name}</div>
-                ) : (
-                  <span className="text-base sm:text-xl font-medium text-gray-400 group-hover:text-white transition-colors">{company.name}</span>
-                )}
-              </div>
-            ))}
-            <div className="col-span-2 aspect-[2/1] glassmorphism hover:glassmorphism-strong transition-all duration-300"></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-24 lg:py-32 relative z-10 overflow-hidden">
-        <div className="aurora-blob aurora-blob-2" style={{ top: '20%', right: '10%' }}></div>
-        <div className="absolute inset-0 grid-crosses opacity-[0.08]"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6">
-              Powerful <span className="text-gradient">features</span> for modern teams
-            </h2>
-            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Everything you need to build, deploy, and scale cloud infrastructure with confidence
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="group p-6 sm:p-8 glassmorphism rounded-2xl hover:glassmorphism-strong transition-all duration-500 hover:scale-105 animate-fade-in-up"
+                className="relative overflow-hidden group animate-fade-in"
                 style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${feature.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                  <feature.icon size={24} />
+                <div className="h-36 sm:h-40 rounded-2xl flex items-center justify-center p-6 transition-all duration-500 hover:scale-[1.02] relative">
+                  {/* Enhanced glassmorphism background */}
+                  <div className="absolute inset-0 bg-[#1a1a1a] bg-opacity-40 backdrop-blur-md rounded-2xl border border-white/5"></div>
+                  
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl opacity-40"></div>
+                  
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Corner accents */}
+                  <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-white/10 rounded-tl-md"></div>
+                  <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-white/10 rounded-tr-md"></div>
+                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-white/10 rounded-bl-md"></div>
+                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-white/10 rounded-br-md"></div>
+                  
+                  {/* Company name */}
+                  <div className="relative z-10 flex items-center justify-center">
+                    <span className="text-xl sm:text-2xl font-medium text-gray-100 group-hover:text-white transition-colors">
+                      {company.name}
+                    </span>
+                  </div>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">{feature.description}</p>
               </div>
             ))}
+          </div>
+          
+          {/* Enhanced testimonial card */}
+          <div className="mt-8 sm:mt-12 animate-fade-in-up">
+            <div className="rounded-2xl relative overflow-hidden">
+              {/* Enhanced glassmorphism background */}
+              <div className="absolute inset-0 bg-[#1a1a1a] bg-opacity-50 backdrop-blur-md"></div>
+              
+              {/* Subtle gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/5"></div>
+              
+              {/* Border highlights */}
+              <div className="absolute inset-0 border border-white/5 rounded-2xl"></div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-10 h-10 border-t border-l border-white/10 rounded-tl-md"></div>
+              <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-white/10 rounded-br-md"></div>
+              
+              <div className="relative p-8 sm:p-10">
+                <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
+                  <div className="w-full sm:w-1/4 flex-shrink-0 mb-6 sm:mb-0">
+                    <div className="relative h-20 w-full rounded-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                      {/* Enterprise logo box */}
+                      <div className="absolute inset-0 bg-[#222] bg-opacity-70 backdrop-blur-md border border-white/10"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                      <div className="relative z-10 h-full flex items-center justify-center">
+                        <span className="text-2xl font-bold text-cyan-400">Enterprise</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <blockquote className="text-gray-200 text-sm sm:text-base italic">
+                      "Vyomira's cloud optimization platform reduced our AWS costs by 42% while improving overall performance. The implementation was seamless and their support team has been exceptional."
+                    </blockquote>
+                    <div className="mt-4 text-sm text-gray-400">
+                      <span className="font-medium text-white">Chief Technology Officer</span> • Fortune 100 Company
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,4 +1,4 @@
-import { BarChart3, Shield, TrendingDown, Activity, Database, Zap, ArrowRight } from 'lucide-react';
+import { BarChart3, Shield, TrendingDown, Activity, Database, Zap, ArrowRight, Cloud, LineChart, Brain, FileText, LogIn } from 'lucide-react';
 
 export default function Platform() {
   return (
@@ -161,6 +161,92 @@ export default function Platform() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
                 <p className="text-gray-400">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* New Platform Features Section with Animation */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/10 to-black"></div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="grid grid-cols-6 h-full w-full">
+            {Array(6).fill(0).map((_, i) => (
+              <div key={i} className="relative h-full">
+                {Array(8).fill(0).map((_, j) => (
+                  <div 
+                    key={`particle-${i}-${j}`} 
+                    className="absolute bg-blue-500/10 rounded-full"
+                    style={{
+                      width: `${Math.random() * 12 + 4}px`,
+                      height: `${Math.random() * 12 + 4}px`,
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animation: `float ${Math.random() * 15 + 25}s infinite ease-in-out`,
+                      animationDelay: `${Math.random() * 10}s`
+                    }}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Platform <span className="text-gradient">Features</span>
+            </h2>
+            <p className="max-w-2xl mx-auto text-gray-400 text-lg">
+              Everything you need to manage, optimize, and secure your multi-cloud infrastructure
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Cloud,
+                title: "Unified Cloud Dashboard",
+                description: "Manage all your cloud environments — AWS, Azure, GCP — from one centralized interface."
+              },
+              {
+                icon: LineChart,
+                title: "Real-Time Cost & Security Analytics",
+                description: "Track performance, spending, and risk exposure in real time with intuitive visual insights."
+              },
+              {
+                icon: Brain,
+                title: "AI-Driven Recommendations",
+                description: "Leverage predictive intelligence to optimize workloads, reduce costs, and boost efficiency."
+              },
+              {
+                icon: Shield,
+                title: "Compliance Posture Visualization",
+                description: "Instantly view compliance status across frameworks like SOC 2, ISO 27001, and GDPR."
+              },
+              {
+                icon: LogIn,
+                title: "Single Sign-On (SSO) Access",
+                description: "Easily and securely manage user access with seamless SSO and multi-factor authentication."
+              },
+              {
+                icon: FileText,
+                title: "Automated Reporting",
+                description: "Generate audit-ready reports for management, finance, and security teams with a single click."
+              }
+            ].map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="p-6 rounded-xl border border-white/10 bg-gradient-to-br from-blue-950/30 to-black/60 backdrop-blur-sm hover:border-blue-500/50 transition-all group"
+              >
+                <div className="bg-blue-500/20 rounded-xl p-3 inline-flex mb-4 group-hover:bg-blue-500/30 transition-colors">
+                  <feature.icon size={28} className="text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>

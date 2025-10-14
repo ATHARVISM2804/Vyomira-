@@ -3,52 +3,25 @@ import { Star, Quote } from 'lucide-react';
 export default function Testimonials() {
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'CTO',
-      company: 'TechCorp Industries',
+      name: 'VP Security',
+      company: 'Payment Startup',
       rating: 5,
-      text: 'Vyomira transformed our cloud infrastructure. We reduced costs by 60% and improved security posture significantly. The AI-powered insights are game-changing.',
-      image: '👩‍💼'
+      text: 'Vyomira helped us pass our PCI DSS audit with zero non-conformities.',
+      image: '🔒'
     },
     {
-      name: 'Michael Chen',
-      role: 'VP of Engineering',
-      company: 'DataFlow Solutions',
+      name: 'CTO',
+      company: 'SaaS Enterprise',
       rating: 5,
-      text: 'The managed DevOps services freed up our team to focus on product development. Best decision we made this year.',
-      image: '👨‍💻'
+      text: 'From day one, Vyomira\'s team identified hidden cost leaks across our AWS accounts and saved us nearly 35%.',
+      image: '💰'
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Security Director',
-      company: 'SecureBank',
+      name: 'Head of DevOps',
+      company: 'Fintech Company',
       rating: 5,
-      text: 'Outstanding security compliance automation. Vyomira helped us achieve SOC 2 certification in record time.',
-      image: '👩‍💼'
-    },
-    {
-      name: 'David Kim',
-      role: 'CEO',
-      company: 'CloudScale Inc',
-      rating: 5,
-      text: 'The multi-cloud management platform is intuitive and powerful. Our ops team loves it.',
-      image: '👨‍💼'
-    },
-    {
-      name: 'Lisa Anderson',
-      role: 'CFO',
-      company: 'FinTech Global',
-      rating: 5,
-      text: 'Real-time cost analytics gave us visibility we never had before. ROI was immediate.',
-      image: '👩‍💼'
-    },
-    {
-      name: 'James Wilson',
-      role: 'DevOps Lead',
-      company: 'AppInnovate',
-      rating: 5,
-      text: 'Their 24/7 support is phenomenal. Infrastructure issues are resolved before they impact users.',
-      image: '👨‍💻'
+      text: 'The unified dashboard and their quick response support team make cloud management effortless.',
+      image: '⚙️'
     }
   ];
 
@@ -61,14 +34,14 @@ export default function Testimonials() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl mb-16 text-center mx-auto animate-fade-in-up">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Client <span className="text-gradient">Testimonials</span>
+              Our Clients <span className="text-gradient">Speak for Us</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              Hear from industry leaders who transformed their cloud infrastructure with Vyomira.
+              Real stories from companies that transformed their cloud operations with Vyomira.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
               <div
                 key={idx}
@@ -84,7 +57,7 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed text-sm">"{testimonial.text}"</p>
+                <p className="text-gray-300 mb-6 leading-relaxed text-lg font-medium">"{testimonial.text}"</p>
 
                 <div className="flex items-center gap-4 pt-6 border-t border-white/5">
                   <div className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-2xl">
@@ -92,24 +65,52 @@ export default function Testimonials() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-400">{testimonial.role}</p>
-                    <p className="text-xs text-gray-500">{testimonial.company}</p>
+                    <p className="text-sm text-gray-400">{testimonial.company}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="glassmorphism rounded-2xl p-8 sm:p-12 max-w-3xl mx-auto">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">Join 500+ Happy Clients</h3>
-              <p className="text-gray-400 mb-8">Start your cloud transformation journey today.</p>
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 animate-glow"
-              >
-                Get Started Now
-              </a>
+          <div className="mt-20">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="glassmorphism rounded-2xl p-8 sm:p-12 h-full">
+                <h3 className="text-3xl font-bold mb-6">Featured Success Stories</h3>
+                <ul className="space-y-6">
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-blue-400">35% Cost Reduction</h4>
+                      <p className="text-gray-400">For a SaaS platform running on AWS, Azure, and GCP</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-blue-400">PCI DSS Compliance</h4>
+                      <p className="text-gray-400">Zero non-conformities for a payment processing startup</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-blue-400">99.99% Uptime</h4>
+                      <p className="text-gray-400">For a critical fintech application with 24/7 support</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="glassmorphism rounded-2xl p-8 sm:p-12 h-full flex flex-col justify-center">
+                <h3 className="text-3xl font-bold mb-6">Join Our Success Story</h3>
+                <p className="text-gray-400 mb-8">Experience the Vyomira difference with our cloud experts by your side.</p>
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 animate-glow"
+                >
+                  Schedule a Consultation
+                </a>
+              </div>
             </div>
           </div>
         </div>
