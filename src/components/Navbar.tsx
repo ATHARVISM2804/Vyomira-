@@ -76,7 +76,7 @@ export default function Navbar() {
         <div className="md:hidden glassmorphism-strong border-t border-white/10 animate-fade-in backdrop-blur-2xl">
           <div className="px-4 sm:px-6 py-6 space-y-2">
             {[
-              { label: 'Service', href: '/' },
+              { label: 'Home', href: '/' },
               { label: 'Solution', href: '/solutions' },
               { label: 'About', href: '/about' },
               { label: 'Gallery', href: '/gallery' },
