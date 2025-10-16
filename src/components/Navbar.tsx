@@ -58,7 +58,7 @@ export default function Navbar() {
               className="ml-4 px-4 lg:px-5 py-2 text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
             >
               <Phone size={14} />
-              <span>Book a Call</span>
+              <span >Book a Call</span>
             </a>
           </div>
 

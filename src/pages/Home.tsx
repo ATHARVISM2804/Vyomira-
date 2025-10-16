@@ -1,6 +1,9 @@
 import { ArrowRight, Shield, Zap, Cloud, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, Lock, DollarSign, FileCheck, Cog, CreditCard } from 'lucide-react';
+import { useState } from 'react';
+import CalendlyPopup from '../components/Calendlypopup';
 
 export default function Home() {
+  const [showCalendly, setShowCalendly] = useState(false);
   const stats = [
     { value: '500+', label: 'Enterprise Clients' },
     { value: '99.9%', label: 'Uptime SLA' },
@@ -137,19 +140,27 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href="/contact"
+                <button
+                  onClick={() => setShowCalendly(true)}
                   className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow text-sm sm:text-base"
                 >
                   Schedule a Demo
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+                </button>
                 <a
                   href="/platform"
                   className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 >
                   Explore Our Platform
                 </a>
+                {showCalendly && (
+                  <CalendlyPopup
+                    url="https://calendly.com/vyomira/demo"
+                    open={showCalendly}
+                    onClose={() => setShowCalendly(false)}
+                    title="Schedule a Demo"
+                  />
+                )}
               </div>
             </div>
 

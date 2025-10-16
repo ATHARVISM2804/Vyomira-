@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Mail, MessageSquare, Send, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Mail, Send, MapPin, Phone, ArrowRight } from 'lucide-react';
+import CalendlyPopup from '../components/Calendlypopup';
 
 export default function Contact() {
+  const [showBookCall, setShowBookCall] = useState(false);
+  const [showContactSale, setShowContactSale] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -117,6 +120,41 @@ export default function Contact() {
                     <span className="group-hover:translate-x-1 transition-transform">Cloud billing & reseller services</span>
                   </li>
                 </ul>
+
+                <div className="mt-6 space-y-3">
+                  <button
+                    onClick={() => setShowBookCall(true)}
+                    className="w-full px-4 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all flex items-center justify-center"
+                  >
+                    Book a Call
+                    <ArrowRight size={16} className="ml-2" />
+                  </button>
+                  <button
+                    onClick={() => setShowContactSale(true)}
+                    className="w-full px-4 py-3 border border-blue-500/30 bg-blue-500/10 rounded-lg font-medium hover:bg-blue-500/20 transition-all flex items-center justify-center"
+                  >
+                    Contact Sales
+                    <ArrowRight size={16} className="ml-2" />
+                  </button>
+                </div>
+                
+                {showBookCall && (
+                  <CalendlyPopup
+                    url="https://calendly.com/vyomira/call"
+                    open={showBookCall}
+                    onClose={() => setShowBookCall(false)}
+                    title="Book a Call"
+                  />
+                )}
+                
+                {showContactSale && (
+                  <CalendlyPopup
+                    url="https://calendly.com/vyomira/sales"
+                    open={showContactSale}
+                    onClose={() => setShowContactSale(false)}
+                    title="Contact Sales Team"
+                  />
+                )}
               </div>
             </div>
 
@@ -223,10 +261,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
-      <div className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform shadow-lg hover:shadow-blue-500/50 glow-button z-40">
-        <MessageSquare size={24} />
-      </div>
     </div>
   );
 }

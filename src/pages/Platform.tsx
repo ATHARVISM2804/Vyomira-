@@ -1,6 +1,10 @@
 import { BarChart3, Shield, TrendingDown, Activity, Database, Zap, ArrowRight, Cloud, LineChart, Brain, FileText, LogIn } from 'lucide-react';
+import { useState } from 'react';
+import CalendlyPopup from '../components/Calendlypopup';
 
 export default function Platform() {
+  const [showCalendly, setShowCalendly] = useState(false);
+  const [showSalesCalendly, setShowSalesCalendly] = useState(false);
   return (
     <div className="min-h-screen bg-black text-white pt-16">
       <section className="py-32 relative overflow-hidden">
@@ -279,10 +283,28 @@ export default function Platform() {
                 Seamlessly integrate with your existing tools and workflows. Full REST API
                 and webhooks for custom automation.
               </p>
-              <a href="/contact" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group">
-                View Documentation
-                <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </a>
+              <div className="flex flex-col gap-3">
+                <a href="/contact" className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group">
+                  View Documentation
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <button 
+                  onClick={() => setShowSalesCalendly(true)} 
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group"
+                >
+                  Contact Sales
+                  <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              
+              {showSalesCalendly && (
+                <CalendlyPopup
+                  url="https://calendly.com/vyomira/sales"
+                  open={showSalesCalendly}
+                  onClose={() => setShowSalesCalendly(false)}
+                  title="Contact Sales Team"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -294,12 +316,20 @@ export default function Platform() {
           <p className="text-xl text-gray-400 mb-8">
             Schedule a personalized demo to explore how Vyomira can transform your cloud operations.
           </p>
-          <a
-            href="/contact"
+          <button
+            onClick={() => setShowCalendly(true)}
             className="inline-block px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all glow-button"
           >
             Request a Demo
-          </a>
+          </button>
+          {showCalendly && (
+            <CalendlyPopup
+              url="https://calendly.com/vyomira/demo"
+              open={showCalendly}
+              onClose={() => setShowCalendly(false)}
+              title="Request a Demo"
+            />
+          )}
         </div>
       </section>
     </div>
