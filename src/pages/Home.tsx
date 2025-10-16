@@ -112,41 +112,41 @@ export default function Home() {
       <div className="aurora-blob aurora-blob-2" style={{ bottom: '20%', left: '5%' }}></div>
       <div className="aurora-blob aurora-blob-3" style={{ top: '50%', left: '50%' }}></div>
 
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-[90vh] flex items-center py-12">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/30 via-[#0a0a0a] to-cyan-950/20"></div>
           <div className="absolute inset-0 grid-crosses opacity-[0.15]"></div>
         </div>
 
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 lg:py-32 z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-4 py-2 glassmorphism rounded-full text-sm text-blue-400">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 lg:py-20 z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 glassmorphism rounded-full text-xs sm:text-sm text-blue-400">
                 <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
                 3.0 beta is live
-                <ArrowRight size={14} />
+                <ArrowRight size={14} className="hidden sm:inline-block" />
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[1.1]">
                 The fastest way to<br />
                 <span className="text-gradient">build tomorrow's cloud.</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-xl">
                 Vyomira Tech Solutions helps organizations take complete control of their cloud ecosystem with AI-powered insights, cost optimization, compliance automation, and managed DevOps services.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow text-sm sm:text-base"
                 >
                   Schedule a Demo
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="/platform"
-                  className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 >
                   Explore Our Platform
                 </a>
@@ -186,6 +186,23 @@ export default function Home() {
                   </div>
 
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[80%] h-2 bg-gradient-to-r from-transparent via-black/50 to-transparent blur-xl"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile-only simplified hero image */}
+            <div className="lg:hidden relative h-60 sm:h-72 mt-4 animate-fade-in-up">
+              <div className="relative w-full h-full glassmorphism-strong rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-950"></div>
+                <div className="text-center space-y-4 relative z-10 px-4">
+                  <h3 className="text-3xl sm:text-4xl font-bold tracking-tight">
+                    <span className="block text-gray-200">NEXT-GEN</span>
+                    <span className="block text-gradient">IS HERE</span>
+                  </h3>
+                  <p className="text-gray-400 text-sm sm:text-base">Power anything you can imagine.</p>
+                  <div className="flex gap-2 justify-center">
+                    <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
+                  </div>
                 </div>
               </div>
             </div>
