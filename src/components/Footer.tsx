@@ -1,4 +1,4 @@
-import { Twitter, Linkedin, Github, Mail, Sparkles, ArrowRight, Phone, MessageSquare, X } from 'lucide-react';
+import { Linkedin, Mail, Sparkles, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Enhanced Modal component for displaying policies
@@ -104,10 +104,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { Icon: Twitter, href: '#', label: 'Twitter' },
-    { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { Icon: Github, href: '#', label: 'GitHub' },
-    { Icon: Mail, href: 'mailto:hello@vyomira.com', label: 'Email' }
+    { Icon: Linkedin, href: 'https://www.linkedin.com/company/vyomira-tech-solutions-private-limited/', label: 'LinkedIn' },
+    { Icon: Instagram, href: 'https://www.instagram.com/vyomiratech?igsh=NjFxdTZuNGo2cDJv', label: 'Instagram' },
+    { Icon: Youtube, href: 'https://youtube.com/@vyomira-tech?si=bJznRsZG0Cq5B1mM', label: 'YouTube' },
+    { Icon: Mail, href: 'mailto:info@vyomiratech.com', label: 'Email' }
   ];
 
   const contactInfo = [
