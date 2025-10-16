@@ -75,7 +75,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a href="mailto:contact@vyomira.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-                      contact@vyomira.com
+                      info@vyomiratech.com
                     </a>
                     <p className="text-gray-400 text-sm mt-1">We'll respond within 24 hours</p>
                   </div>
@@ -88,7 +88,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
                     <a href="tel:+91XXXXXXXXXX" className="text-blue-400 hover:text-blue-300 transition-colors">
-                      +91-XXXXXXXXXX
+                     +91 90343 70807
                     </a>
                   </div>
                 </div>
