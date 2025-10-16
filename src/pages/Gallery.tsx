@@ -5,15 +5,78 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const images = [
-    { title: 'Cloud Infrastructure', category: 'Infrastructure' },
-    { title: 'Security Dashboard', category: 'Security' },
-    { title: 'Analytics Overview', category: 'Analytics' },
-    { title: 'Cost Optimization', category: 'Optimization' },
-    { title: 'Team Collaboration', category: 'Collaboration' },
-    { title: 'DevOps Pipeline', category: 'DevOps' },
-    { title: 'Multi-Cloud Setup', category: 'Infrastructure' },
-    { title: 'Performance Metrics', category: 'Analytics' },
-    { title: 'Compliance Reports', category: 'Security' }
+    { 
+      title: 'Cloud Infrastructure', 
+      category: 'Infrastructure',
+      imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Advanced cloud architecture designed for enterprise-scale operations with multi-region redundancy.'
+    },
+    { 
+      title: 'Security Dashboard', 
+      category: 'Security',
+      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Real-time security monitoring with AI-powered threat detection and automated incident response.'
+    },
+    { 
+      title: 'Analytics Overview', 
+      category: 'Analytics',
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Comprehensive data visualization and insights platform with predictive analytics capabilities.'
+    },
+    { 
+      title: 'Cost Optimization', 
+      category: 'Optimization',
+      imageUrl: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'AI-driven cost management tools that automatically identify savings opportunities across cloud services.'
+    },
+    { 
+      title: 'Team Collaboration', 
+      category: 'Collaboration',
+      imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Integrated team workspace with real-time collaboration features for distributed DevOps teams.'
+    },
+    { 
+      title: 'DevOps Pipeline', 
+      category: 'DevOps',
+      imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Streamlined CI/CD pipelines with automated testing and deployment for maximum development velocity.'
+    },
+    { 
+      title: 'Multi-Cloud Setup', 
+      category: 'Infrastructure',
+      imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Unified management interface for AWS, Azure, and GCP resources with centralized policy enforcement.'
+    },
+    { 
+      title: 'Performance Metrics', 
+      category: 'Analytics',
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Detailed performance monitoring with custom dashboards and intelligent anomaly detection.'
+    },
+    { 
+      title: 'Compliance Reports', 
+      category: 'Security',
+      imageUrl: 'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Automated compliance reporting for SOC 2, HIPAA, GDPR, ISO 27001 and other regulatory frameworks.'
+    },
+    { 
+      title: 'AI-Powered Recommendations', 
+      category: 'Intelligence',
+      imageUrl: 'https://images.unsplash.com/photo-1655720828018-edd2daec9349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Machine learning algorithms that provide intelligent recommendations for optimizing your cloud infrastructure.'
+    },
+    { 
+      title: 'Disaster Recovery', 
+      category: 'Resilience',
+      imageUrl: 'https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Comprehensive disaster recovery solutions with automated failover and multi-region backup strategies.'
+    },
+    { 
+      title: 'Serverless Architecture', 
+      category: 'Architecture',
+      imageUrl: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      description: 'Modern serverless application architectures that scale automatically and reduce operational overhead.'
+    }
   ];
 
   return (
@@ -41,19 +104,31 @@ export default function Gallery() {
                 style={{ animationDelay: `${idx * 100}ms` }}
                 onClick={() => setSelectedImage(idx)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 group-hover:from-blue-500/30 group-hover:to-cyan-500/30 transition-all duration-500"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                      <Maximize2 size={28} />
+                {/* Background image with overlay */}
+                <div className="absolute inset-0">
+                  <img 
+                    src={image.imageUrl} 
+                    alt={image.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 group-hover:from-blue-500/30 group-hover:to-cyan-500/30 transition-all duration-500 mix-blend-overlay"></div>
+                </div>
+                
+                {/* Content overlay */}
+                <div className="absolute inset-0 flex items-end p-6">
+                  <div className="w-full">
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-xl font-bold">{image.title}</h3>
+                      <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <Maximize2 size={20} />
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{image.title}</h3>
-                    <span className="text-sm text-gray-400 glassmorphism px-3 py-1 rounded-full">
+                    <span className="inline-block text-xs text-cyan-400 glassmorphism px-3 py-1 rounded-full mb-3">
                       {image.category}
                     </span>
                   </div>
                 </div>
-                <div className="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 rounded-2xl transition-all duration-300"></div>
               </div>
             ))}
           </div>
@@ -62,21 +137,32 @@ export default function Gallery() {
 
       {selectedImage !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 glassmorphism-strong animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-lg animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-4xl w-full aspect-video glassmorphism-strong rounded-2xl p-8">
+          <div 
+            className="relative max-w-5xl w-full rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 w-10 h-10 glassmorphism rounded-full flex items-center justify-center hover:bg-white/10 transition-all"
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-white/10 transition-all text-white"
             >
               ✕
             </button>
-            <div className="flex items-center justify-center h-full">
-              <div className="text-center">
-                <h3 className="text-3xl font-bold mb-4">{images[selectedImage].title}</h3>
-                <p className="text-gray-400">Full image preview</p>
-              </div>
+            
+            <img 
+              src={images[selectedImage].imageUrl}
+              alt={images[selectedImage].title}
+              className="w-full object-contain max-h-[80vh]"
+            />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
+              <h3 className="text-2xl font-bold mb-2">{images[selectedImage].title}</h3>
+              <p className="text-gray-300 mb-1">{images[selectedImage].description}</p>
+              <span className="inline-block text-xs text-cyan-400 glassmorphism px-3 py-1 rounded-full mt-2">
+                {images[selectedImage].category}
+              </span>
             </div>
           </div>
         </div>

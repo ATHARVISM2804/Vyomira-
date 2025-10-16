@@ -355,34 +355,122 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24 lg:py-32 relative z-10 border-t border-white/5">
-        <div className="aurora-blob aurora-blob-1" style={{ bottom: '10%', left: '20%' }}></div>
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <div className="glassmorphism-dark rounded-3xl p-8 sm:p-16 animate-scale-in">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-              Ready to transform your <span className="text-gradient">cloud infrastructure?</span>
-            </h2>
-            <p className="text-gray-400 mb-8 text-base sm:text-lg max-w-2xl mx-auto">
-              Start your free trial today. No credit card required. Get up and running in minutes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow"
-              >
-                Get Started Free
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
-              >
-                Talk to Sales
-              </a>
+     <section className="py-16 sm:py-24 lg:py-32 relative z-10 border-t border-white/5">
+  <div className="aurora-blob aurora-blob-1" style={{ bottom: '10%', left: '20%' }}></div>
+  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+        How Vyomira <span className="text-gradient">Transforms</span> Your Cloud
+      </h2>
+      <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+        Our comprehensive approach covers every aspect of modern cloud infrastructure management
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
+      {[
+        {
+          title: "AI-Powered Cost Optimization",
+          description: "Our intelligent algorithms analyze your usage patterns to identify waste and recommend optimal resource allocation, typically reducing costs by 30-60%.",
+          icon: DollarSign,
+          metrics: "Avg. Savings: 42%"
+        },
+        {
+          title: "Security & Compliance",
+          description: "Automated scans detect misconfigurations, vulnerabilities, and policy violations before they become problems. Stay compliant with HIPAA, GDPR, SOC 2, and more.",
+          icon: Shield,
+          metrics: "100+ Security Checks"
+        },
+        {
+          title: "Performance Monitoring",
+          description: "Real-time monitoring with intelligent alerting ensures your applications run at peak performance. Identify bottlenecks before they affect your users.",
+          icon: BarChart3,
+          metrics: "99.9% SLA Guarantee"
+        },
+        {
+          title: "Multi-Cloud Management",
+          description: "Unified dashboard to manage AWS, Azure, GCP, and other providers from a single interface. Standardize operations across your entire infrastructure.",
+          icon: Globe,
+          metrics: "7+ Cloud Providers"
+        },
+        {
+          title: "DevOps Automation",
+          description: "Infrastructure as code templates, CI/CD pipeline optimization, and containerization solutions to accelerate your development lifecycle.",
+          icon: Cog,
+          metrics: "70% Faster Deployments"
+        },
+        {
+          title: "24/7 Expert Support",
+          description: "Our team of certified cloud architects and engineers are available around the clock to help troubleshoot issues and optimize your infrastructure.",
+          icon: Users,
+          metrics: "15min Avg. Response Time"
+        }
+      ].map((item, idx) => (
+        <div 
+          key={idx} 
+          className="glassmorphism rounded-2xl p-6 hover:glassmorphism-strong transition-all duration-300"
+          style={{ animationDelay: `${idx * 100}ms` }}
+        >
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500/20 to-cyan-400/20 flex items-center justify-center mb-5">
+            <item.icon size={24} className="text-cyan-400" />
+          </div>
+          <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+          <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+            {item.description}
+          </p>
+          <div className="flex items-center mt-auto pt-4 border-t border-white/5">
+            <div className="text-xs bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full">
+              {item.metrics}
             </div>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <div className="mt-16 glassmorphism rounded-2xl p-8 animate-fade-in-up">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 className="text-2xl font-bold mb-4">Ready to see it in action?</h3>
+          <p className="text-gray-400 mb-6">
+            Schedule a personalized demo with our cloud specialists to see how Vyomira can transform your specific infrastructure challenges.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/solutions"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group"
+            >
+              Visit Solutions
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="/platform"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
+            >
+              Explore Platform
+            </a>
+          </div>
+        </div>
+        <div className="glassmorphism-dark rounded-xl p-6">
+          <h4 className="text-lg font-semibold mb-3 text-gradient">Industry Success Metrics</h4>
+          <div className="space-y-4">
+            {[
+              { label: "Average Cost Reduction", value: "42%" },
+              { label: "Implementation Time", value: "< 2 weeks" },
+              { label: "Performance Improvement", value: "35%" },
+              { label: "Security Incident Reduction", value: "76%" }
+            ].map((stat, idx) => (
+              <div key={idx} className="flex justify-between items-center">
+                <span className="text-gray-400">{stat.label}</span>
+                <span className="text-white font-medium">{stat.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }

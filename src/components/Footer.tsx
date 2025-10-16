@@ -112,8 +112,8 @@ export default function Footer() {
 
   const contactInfo = [
     { Icon: Mail, text: 'contact@vyomira.com', href: 'mailto:contact@vyomira.com' },
-    { Icon: Phone, text: '+91 123 456 7890', href: 'tel:+911234567890' },
-    { Icon: MessageSquare, text: 'WhatsApp Chat', href: '#' }
+    { Icon: Phone, text: '+91 9034370807', href: 'tel:+919034370807' },
+    { Icon: MessageSquare, text: 'WhatsApp Chat', href: 'https://wa.me/919034370807?text=Hello%20Vyomira%2C%20I%27m%20interested%20in%20your%20services' }
   ];
 
   // Enhanced policy content

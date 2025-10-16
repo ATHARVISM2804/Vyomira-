@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,23 +52,33 @@ export default function Navbar() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             ))}
-
+            
             <a
-              href="/login"
-              className="ml-4 px-4 lg:px-6 py-2 text-sm text-white glassmorphism-strong rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 group relative overflow-hidden"
+              href="/contact"
+              className="ml-4 px-4 lg:px-5 py-2 text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
             >
-              <span className="relative z-10">Login</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Phone size={14} />
+              <span>Book a Call</span>
             </a>
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white p-2 hover:bg-white/5 rounded-lg transition-all relative group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            {isOpen ? <X size={24} className="relative z-10" /> : <Menu size={24} className="relative z-10" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <a
+              href="/contact"
+              className="px-3 py-1.5 text-xs text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-1"
+            >
+              <Phone size={12} />
+              <span>Book</span>
+            </a>
+            
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white p-2 hover:bg-white/5 rounded-lg transition-all relative group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {isOpen ? <X size={24} className="relative z-10" /> : <Menu size={24} className="relative z-10" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -95,12 +105,15 @@ export default function Navbar() {
                 {item.label}
               </a>
             ))}
+            
             <a
-              href="/login"
-              className="block text-sm text-white glassmorphism rounded-lg px-4 py-3 text-center mt-4 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-400 transition-all"
+              href="/contact"
+              className="block text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg px-4 py-3 text-center mt-4 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 animate-fade-in-up"
+              style={{ animationDelay: `${8 * 50}ms` }}
               onClick={() => setIsOpen(false)}
             >
-              Login
+              <Phone size={16} />
+              <span>Book a Call</span>
             </a>
           </div>
         </div>
