@@ -24,7 +24,7 @@ export default function Contact() {
     const payload = new FormData(form);
 
     // TODO: replace with your actual access key or move to env
-    payload.append('access_key', '86f7b212-3cae-4a90-9776-40bef2974a83');
+    payload.append('access_key', '03af1757-24d4-41c8-bed8-73604df1003a');
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
