@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Sparkles, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube } from 'lucide-react';
+import { Linkedin, Mail, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 // Enhanced Modal component for displaying policies
@@ -325,9 +325,13 @@ export default function Footer() {
             <div>
               <div className="flex items-center space-x-3 mb-6 group">
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg blur-md group-hover:blur-lg transition-all duration-300 opacity-50"></div>
-                  <div className="relative w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center">
-                    <Sparkles size={20} className="text-white" />
+                  {/* Replace Sparkles icon with the new logo */}
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <img 
+                      src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1760688501/Screenshot_2025-10-17_133657_k6alu1.png" 
+                      alt="Vyomira Logo" 
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                 </div>
                 <span className="text-lg font-bold text-white">Vyomira</span>

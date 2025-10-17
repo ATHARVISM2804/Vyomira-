@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Sparkles, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +24,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16 sm:h-18">
           <a href="/" className="flex items-center space-x-3 group relative z-10">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg blur-md group-hover:blur-lg transition-all duration-300 opacity-50"></div>
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                <Sparkles size={18} className="text-white animate-pulse" />
-              </div>
+              {/* Replace the icon with the Cloudinary image */}
+              <img 
+                src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1760688501/Screenshot_2025-10-17_133657_k6alu1.png" 
+                alt="Vyomira Logo" 
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+              />
             </div>
             <span className="text-base sm:text-lg font-bold text-white group-hover:text-gradient transition-all">Vyomira</span>
           </a>
@@ -58,7 +60,7 @@ export default function Navbar() {
               className="ml-4 px-4 lg:px-5 py-2 text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
             >
               <Phone size={14} />
-              <span >Book a Call</span>
+              <span>Book a Call</span>
             </a>
           </div>
 
