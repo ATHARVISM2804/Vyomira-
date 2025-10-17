@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Zap, Cloud, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, Lock, DollarSign, FileCheck, Cog, CreditCard } from 'lucide-react';
+import { ArrowRight, Shield, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, DollarSign,  Cog} from 'lucide-react';
 import { useState } from 'react';
 import CalendlyPopup from '../components/Calendlypopup';
 
@@ -11,63 +11,63 @@ export default function Home() {
     { value: '24/7', label: 'Expert Support' }
   ];
 
-  const features = [
+  // const features = [
    
-    {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Optimized performance with edge computing and intelligent caching strategies.',
-      color: 'from-yellow-500 to-orange-400'
-    },
-    {
-      icon: Cloud,
-      title: 'Multi-Cloud',
-      description: 'Seamless integration across AWS, Azure, Google Cloud, and more platforms.',
-      color: 'from-purple-500 to-pink-400'
-    },
-    {
-      icon: BarChart3,
-      title: 'Analytics',
-      description: 'AI-powered insights with predictive analytics and cost optimization.',
-      color: 'from-green-500 to-emerald-400'
-    },
-    {
-      icon: Users,
-      title: 'Team Collaboration',
-      description: 'Built-in tools for seamless team communication and project management.',
-      color: 'from-indigo-500 to-blue-400'
-    },
-    {
-      icon: Lock,
-      title: 'Compliance Ready',
-      description: 'SOC 2, ISO 27001, HIPAA, and GDPR compliance out of the box.',
-      color: 'from-red-500 to-pink-400'
-    },
-    {
-      icon: DollarSign,
-      title: 'Cloud Cost Optimization',
-      description: 'Reduce cloud spending with intelligent resource allocation and optimization.',
-      color: 'from-emerald-500 to-green-400'
-    },
-    {
-      icon: FileCheck,
-      title: 'Security & Compliance Automation',
-      description: 'Automate security checks and compliance protocols across your infrastructure.',
-      color: 'from-orange-500 to-red-400'
-    },
-    {
-      icon: Cog,
-      title: 'DevOps Managed Services',
-      description: 'End-to-end management of your DevOps pipeline for maximum efficiency.',
-      color: 'from-blue-500 to-indigo-400'
-    },
-    {
-      icon: CreditCard,
-      title: 'Cloud Billing Partner',
-      description: 'Consolidated billing and payment optimization for all your cloud providers.',
-      color: 'from-pink-500 to-purple-400'
-    }
-  ];
+  //   {
+  //     icon: Zap,
+  //     title: 'Lightning Fast',
+  //     description: 'Optimized performance with edge computing and intelligent caching strategies.',
+  //     color: 'from-yellow-500 to-orange-400'
+  //   },
+  //   {
+  //     icon: Cloud,
+  //     title: 'Multi-Cloud',
+  //     description: 'Seamless integration across AWS, Azure, Google Cloud, and more platforms.',
+  //     color: 'from-purple-500 to-pink-400'
+  //   },
+  //   {
+  //     icon: BarChart3,
+  //     title: 'Analytics',
+  //     description: 'AI-powered insights with predictive analytics and cost optimization.',
+  //     color: 'from-green-500 to-emerald-400'
+  //   },
+  //   {
+  //     icon: Users,
+  //     title: 'Team Collaboration',
+  //     description: 'Built-in tools for seamless team communication and project management.',
+  //     color: 'from-indigo-500 to-blue-400'
+  //   },
+  //   {
+  //     icon: Lock,
+  //     title: 'Compliance Ready',
+  //     description: 'SOC 2, ISO 27001, HIPAA, and GDPR compliance out of the box.',
+  //     color: 'from-red-500 to-pink-400'
+  //   },
+  //   {
+  //     icon: DollarSign,
+  //     title: 'Cloud Cost Optimization',
+  //     description: 'Reduce cloud spending with intelligent resource allocation and optimization.',
+  //     color: 'from-emerald-500 to-green-400'
+  //   },
+  //   {
+  //     icon: FileCheck,
+  //     title: 'Security & Compliance Automation',
+  //     description: 'Automate security checks and compliance protocols across your infrastructure.',
+  //     color: 'from-orange-500 to-red-400'
+  //   },
+  //   {
+  //     icon: Cog,
+  //     title: 'DevOps Managed Services',
+  //     description: 'End-to-end management of your DevOps pipeline for maximum efficiency.',
+  //     color: 'from-blue-500 to-indigo-400'
+  //   },
+  //   {
+  //     icon: CreditCard,
+  //     title: 'Cloud Billing Partner',
+  //     description: 'Consolidated billing and payment optimization for all your cloud providers.',
+  //     color: 'from-pink-500 to-purple-400'
+  //   }
+  // ];
 
   const benefits = [
     'AI-Driven Cloud Intelligence – Detect anomalies, forecast usage, and optimize spend.',

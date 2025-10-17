@@ -2,8 +2,34 @@ import { Linkedin, Mail, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube
 import { useState, useEffect } from 'react';
 import CalendlyPopup from './Calendlypopup';
 
+// Add interfaces for component props
+interface PolicyModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+}
+
+interface PolicySectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+interface PolicySubSectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+interface PolicyParagraphProps {
+  children: React.ReactNode;
+}
+
+interface PolicyListProps {
+  items: string[];
+}
+
 // Enhanced Modal component for displaying policies
-const PolicyModal = ({ isOpen, onClose, title, children }) => {
+const PolicyModal = ({ isOpen, onClose, title, children }: PolicyModalProps) => {
   useEffect(() => {
     // Prevent body scrolling when modal is open
     if (isOpen) {
@@ -13,7 +39,7 @@ const PolicyModal = ({ isOpen, onClose, title, children }) => {
     }
     
     // Handle escape key
-    const handleEsc = (e) => {
+    const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     
@@ -29,7 +55,7 @@ const PolicyModal = ({ isOpen, onClose, title, children }) => {
   return (
     <div 
       className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
-      onClick={(e) => {
+      onClick={(e: React.MouseEvent) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
@@ -62,25 +88,25 @@ const PolicyModal = ({ isOpen, onClose, title, children }) => {
 };
 
 // Policy content component with enhanced styling
-const PolicySection = ({ title, children }) => (
+const PolicySection = ({ title, children }: PolicySectionProps) => (
   <div className="mb-8">
     <h2 className="text-xl sm:text-2xl font-bold mb-4 text-white">{title}</h2>
     {children}
   </div>
 );
 
-const PolicySubSection = ({ title, children }) => (
+const PolicySubSection = ({ title, children }: PolicySubSectionProps) => (
   <div className="mb-6">
     <h3 className="text-lg font-semibold mb-3 text-cyan-400">{title}</h3>
     {children}
   </div>
 );
 
-const PolicyParagraph = ({ children }) => (
+const PolicyParagraph = ({ children }: PolicyParagraphProps) => (
   <p className="text-gray-300 mb-4 leading-relaxed text-sm sm:text-base">{children}</p>
 );
 
-const PolicyList = ({ items }) => (
+const PolicyList = ({ items }: PolicyListProps) => (
   <ul className="space-y-2 mb-4 pl-6">
     {items.map((item, idx) => (
       <li key={idx} className="text-gray-300 text-sm sm:text-base relative pl-4 before:content-['•'] before:absolute before:left-0 before:text-cyan-400">{item}</li>
@@ -90,7 +116,7 @@ const PolicyList = ({ items }) => (
 
 export default function Footer() {
   // State to track which modal is open
-  const [activeModal, setActiveModal] = useState(null);
+  const [activeModal, setActiveModal] = useState<string | null>(null);
   const [showCalendly, setShowCalendly] = useState(false);
 
   // Simplified navigation links - single column

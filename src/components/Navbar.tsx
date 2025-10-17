@@ -126,7 +126,7 @@ export default function Navbar() {
                 setShowCalendly(true);
                 setIsOpen(false);
               }}
-              className="block text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg px-4 py-3 text-center mt-4 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 animate-fade-in-up"
+              className=" text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg px-4 py-3 text-center mt-4 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 animate-fade-in-up"
               style={{ animationDelay: `${8 * 50}ms` }}
             >
               <Phone size={16} />

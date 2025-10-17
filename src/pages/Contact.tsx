@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Send, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
 import CalendlyPopup from '../components/Calendlypopup';
 
 export default function Contact() {
