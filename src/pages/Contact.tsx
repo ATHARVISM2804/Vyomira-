@@ -172,7 +172,7 @@ export default function Contact() {
                 
                 {showBookCall && (
                   <CalendlyPopup
-                    url="https://calendly.com/vyomira/30min"
+                    url="https://calendly.com/rohit-vyomiratech/30min"
                     open={showBookCall}
                     onClose={() => setShowBookCall(false)}
                     title="Book a Call"
@@ -181,7 +181,7 @@ export default function Contact() {
                 
                 {showContactSale && (
                   <CalendlyPopup
-                    url="https://calendly.com/vyomira/30min"
+                    url="https://calendly.com/rohit-vyomiratech/30min"
                     open={showContactSale}
                     onClose={() => setShowContactSale(false)}
                     title="Contact Sales Team"

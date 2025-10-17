@@ -138,7 +138,7 @@ export default function Navbar() {
 
       {/* Calendly Popup */}
       <CalendlyPopup
-        url="https://calendly.com/your-calendly-url/30min"
+        url="https://calendly.com/rohit-vyomiratech/30min"
         open={showCalendly}
         onClose={() => setShowCalendly(false)}
         title="Book Your Call"
