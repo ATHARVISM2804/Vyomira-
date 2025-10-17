@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import CalendlyPopup from './Calendlypopup';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +58,11 @@ export default function Navbar() {
             ))}
             
             <a
-              href="/contact"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowCalendly(true);
+              }}
               className="ml-4 px-4 lg:px-5 py-2 text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
             >
               <Phone size={14} />
@@ -66,13 +72,18 @@ export default function Navbar() {
 
           <div className="md:hidden flex items-center gap-2">
             <a
-              href="/contact"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowCalendly(true);
+                setIsOpen(false);
+              }}
               className="px-3 py-1.5 text-xs text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-1"
             >
               <Phone size={12} />
               <span>Book</span>
             </a>
-            
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white p-2 hover:bg-white/5 rounded-lg transition-all relative group"
@@ -109,10 +120,14 @@ export default function Navbar() {
             ))}
             
             <a
-              href="/contact"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowCalendly(true);
+                setIsOpen(false);
+              }}
               className="block text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg px-4 py-3 text-center mt-4 hover:shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-2 animate-fade-in-up"
               style={{ animationDelay: `${8 * 50}ms` }}
-              onClick={() => setIsOpen(false)}
             >
               <Phone size={16} />
               <span>Book a Call</span>
@@ -120,6 +135,14 @@ export default function Navbar() {
           </div>
         </div>
       )}
+
+      {/* Calendly Popup */}
+      <CalendlyPopup
+        url="https://calendly.com/your-calendly-url/30min"
+        open={showCalendly}
+        onClose={() => setShowCalendly(false)}
+        title="Book Your Call"
+      />
     </nav>
   );
 }

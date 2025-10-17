@@ -1,5 +1,6 @@
 import { Linkedin, Mail, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import CalendlyPopup from './Calendlypopup';
 
 // Enhanced Modal component for displaying policies
 const PolicyModal = ({ isOpen, onClose, title, children }) => {
@@ -90,6 +91,7 @@ const PolicyList = ({ items }) => (
 export default function Footer() {
   // State to track which modal is open
   const [activeModal, setActiveModal] = useState(null);
+  const [showCalendly, setShowCalendly] = useState(false);
 
   // Simplified navigation links - single column
   const navigationLinks = [
@@ -381,7 +383,11 @@ export default function Footer() {
               </div>
               
               <a
-                href="/contact"
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowCalendly(true);
+                }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow"
               >
                 Book Free Consultation
@@ -459,6 +465,14 @@ export default function Footer() {
       >
         {policyContent.cookies}
       </PolicyModal>
+
+      {/* Calendly Popup */}
+      <CalendlyPopup
+        url="https://calendly.com/your-calendly-url/30min"
+        open={showCalendly}
+        onClose={() => setShowCalendly(false)}
+        title="Book Your Free Consultation"
+      />
     </footer>
   );
 }
