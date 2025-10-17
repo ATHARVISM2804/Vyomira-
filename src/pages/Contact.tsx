@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
 import CalendlyPopup from '../components/Calendlypopup';
 
@@ -12,13 +12,45 @@ export default function Contact() {
     message: ''
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  // web3forms result and success modal
+  const [result, setResult] = useState<string>('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: '', company: '', email: '', message: '' });
+    setResult('Sending....');
+
+    const form = e.target as HTMLFormElement;
+    const payload = new FormData(form);
+
+    // TODO: replace with your actual access key or move to env
+    payload.append('access_key', '86f7b212-3cae-4a90-9776-40bef2974a83');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: payload,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setResult('Form Submitted Successfully');
+        setShowSuccess(true);
+        // reset controlled form state
+        setFormData({ name: '', company: '', email: '', message: '' });
+        // ensure native form values are cleared too
+        form.reset();
+        // auto-dismiss success popup
+        setTimeout(() => setShowSuccess(false), 3500);
+      } else {
+        console.error('Error', data);
+        setResult(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      console.error('Submission error', err);
+      setResult('Submission failed. Please try again later.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -140,7 +172,7 @@ export default function Contact() {
                 
                 {showBookCall && (
                   <CalendlyPopup
-                    url="https://calendly.com/careersparushapandey/30min"
+                    url="https://calendly.com/vyomira/30min"
                     open={showBookCall}
                     onClose={() => setShowBookCall(false)}
                     title="Book a Call"
@@ -149,7 +181,7 @@ export default function Contact() {
                 
                 {showContactSale && (
                   <CalendlyPopup
-                    url="https://calendly.com/careersparushapandey/30min"
+                    url="https://calendly.com/vyomira/30min"
                     open={showContactSale}
                     onClose={() => setShowContactSale(false)}
                     title="Contact Sales Team"
@@ -165,7 +197,7 @@ export default function Contact() {
                   <span className="h-1 w-12 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></span>
                 </h2>
 
-                {submitted && (
+                {showSuccess && (
                   <div className="mb-8 p-6 bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/30 rounded-lg">
                     <div className="flex items-center">
                       <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center mr-4">
@@ -256,6 +288,9 @@ export default function Contact() {
                     <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
+                {result && (
+                  <div className="mt-4 text-sm text-gray-300">{result}</div>
+                )}
               </div>
             </div>
           </div>
