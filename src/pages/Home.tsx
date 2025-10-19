@@ -1,6 +1,7 @@
 import { ArrowRight, Shield, BarChart3, CheckCircle, Users, Award, TrendingUp, Clock, Globe, DollarSign,  Cog} from 'lucide-react';
 import { useState } from 'react';
 import CalendlyPopup from '../components/Calendlypopup';
+import Chatbot from '../components/Chatbot';
 
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
@@ -111,6 +112,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative">
+      <Chatbot />
       <div className="aurora-blob aurora-blob-1" style={{ top: '10%', right: '10%' }}></div>
       <div className="aurora-blob aurora-blob-2" style={{ bottom: '20%', left: '5%' }}></div>
       <div className="aurora-blob aurora-blob-3" style={{ top: '50%', left: '50%' }}></div>

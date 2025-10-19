@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Users, Shield, Brain, Zap, Lock, DollarSign, Code } from 'lucide-react';
+import { Target, Eye, Award, Users, Shield, Brain, Lock, DollarSign, Code } from 'lucide-react';
 
 export default function About() {
   return (

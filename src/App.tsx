@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Gallery from './pages/Gallery';
 import Testimonials from './pages/Testimonials';
 import Teams from './pages/Teams';
+import Chatbot from './components/Chatbot';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -75,6 +76,7 @@ function App() {
       {!isLoginPage && <Navbar />}
       {renderPage()}
       {!isLoginPage && <Footer />}
+      {!isLoginPage && <Chatbot />}
     </div>
   );
 }

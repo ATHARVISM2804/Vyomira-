@@ -1,11 +1,25 @@
-import { TrendingDown, Lock, Zap, DollarSign, ArrowRight, Check, X } from 'lucide-react';
+import { TrendingDown, Lock, Zap, DollarSign, ArrowRight, Check, X, LucideIcon } from 'lucide-react';
 import { useState } from 'react';
+
+type Solution = {
+  icon: LucideIcon;
+  title: string;
+  tagline: string;
+  description: string;
+  benefits: string[];
+  stats: { value: string; label: string };
+  modalContent: {
+    keyFeatures: string[];
+    caseStudy: { title: string; description: string };
+    testimonial: { quote: string; author: string };
+  };
+};
 
 export default function Solutions() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentSolution, setCurrentSolution] = useState(null);
+  const [currentSolution, setCurrentSolution] = useState<Solution | null>(null);
 
-  const solutions = [
+  const solutions: Solution[] = [
     {
       icon: TrendingDown,
       title: 'Cloud Cost Optimization',
@@ -137,7 +151,7 @@ export default function Solutions() {
     }
   ];
 
-  const openModal = (solution) => {
+  const openModal = (solution: Solution) => {
     setCurrentSolution(solution);
     setModalOpen(true);
     document.body.style.overflow = 'hidden';
@@ -200,7 +214,7 @@ export default function Solutions() {
                 <div className="p-8 border border-white/5 rounded-lg bg-gradient-to-br from-blue-950/20 to-transparent">
                   <h3 className="text-xl font-semibold mb-6">Key Benefits</h3>
                   <ul className="space-y-4">
-                    {solution.benefits.map((benefit, benefitIdx) => (
+                    {solution.benefits.map((benefit: string, benefitIdx: number) => (
                       <li key={benefitIdx} className="flex items-start">
                         <Check className="text-blue-400 mr-3 mt-1 flex-shrink-0" size={20} />
                         <span className="text-gray-300">{benefit}</span>
@@ -238,7 +252,7 @@ export default function Solutions() {
       </section>
 
       {/* Modal */}
-      {modalOpen && currentSolution && (
+  {modalOpen && currentSolution && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-gray-900 border border-white/10 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
             <div className="sticky top-0 bg-gray-900 z-10 flex items-center justify-between p-6 border-b border-white/10">
@@ -265,7 +279,7 @@ export default function Solutions() {
               <div>
                 <h4 className="text-xl font-semibold mb-4">Key Features</h4>
                 <ul className="grid md:grid-cols-2 gap-4">
-                  {currentSolution.modalContent.keyFeatures.map((feature, idx) => (
+                  {currentSolution.modalContent.keyFeatures.map((feature: string, idx: number) => (
                     <li key={idx} className="flex items-start">
                       <Check className="text-blue-400 mr-3 mt-1 flex-shrink-0" size={20} />
                       <span className="text-gray-300">{feature}</span>
