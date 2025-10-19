@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
+import { SYSTEM_PROMPT, LEAD_FIELDS, LeadField, SERVICE_SUGGESTIONS } from '../lib/chatbot-context';
+
 type Role = 'user' | 'model' | 'system';
 
 type Message = {
@@ -9,6 +11,10 @@ type Message = {
   role: Role;
   content: string;
   createdAt: number;
+};
+
+type LeadData = {
+  [K in LeadField]?: string;
 };
 
 type ChatbotProps = {
@@ -19,27 +25,65 @@ type ChatbotProps = {
 
 const DEFAULT_MODEL = 'gemini-2.0-flash';
 
+const formatMessage = (text: string) => {
+  return text
+    .split('\n')
+    .map(line => 
+      line
+        // Bold text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // Italic text
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        // Code blocks
+        .replace(/`(.*?)`/g, '<code class="px-1 py-0.5 rounded bg-black/30 font-mono text-xs">$1</code>')
+    )
+    .join('<br />');
+};
+
 export default function Chatbot({
   className,
   welcome = 'Hi! Ask me anything about Vyomira.',
   model = DEFAULT_MODEL,
 }: ChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]); // ✅ plain useState
+  const [messages, setMessages] = useState<Message[]>([
+    { id: 'system', role: 'system', content: SYSTEM_PROMPT, createdAt: Date.now() }
+  ]);
   const [input, setInput] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [leadData, setLeadData] = useState<LeadData>({});
+  const [collectingLead, setCollectingLead] = useState<LeadField | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string | undefined;
 
-  const suggestions = [
-    'What services does Vyomira offer?',
-    'Summarize Vyomira’s platform in 2 lines',
-    'How can I contact support?',
-    'Give me ideas to improve my website SEO',
-  ];
+  const handleLeadCollection = (input: string) => {
+    if (!collectingLead) return false;
+    
+    setLeadData(prev => ({ ...prev, [collectingLead]: input }));
+    
+    const fields = Object.keys(LEAD_FIELDS) as LeadField[];
+    const nextField = fields[fields.indexOf(collectingLead) + 1];
+    
+    if (nextField) {
+      setCollectingLead(nextField);
+      addMessage('model', `Please provide your ${LEAD_FIELDS[nextField]}:`);
+    } else {
+      setCollectingLead(null);
+      // Send lead data to backend/email
+      console.log('Lead collected:', leadData);
+      addMessage('model', 'Thank you for providing your information! Our team will contact you shortly. In the meantime, is there anything specific you\'d like to know about our services?');
+    }
+    
+    return true;
+  };
+  
+  const startLeadCollection = () => {
+    setCollectingLead('name');
+    addMessage('model', `Please provide your ${LEAD_FIELDS.name}:`);
+  };
 
   function addMessage(role: Role, content: string) {
     setMessages((prev) => [
@@ -49,7 +93,15 @@ export default function Chatbot({
   }
 
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    // Only auto-scroll if user is already near bottom
+    const isNearBottom = scrollContainer.scrollHeight - scrollContainer.scrollTop - scrollContainer.clientHeight < 100;
+    
+    if (isNearBottom) {
+      scrollContainer.scrollTo({ top: scrollContainer.scrollHeight, behavior: 'smooth' });
+    }
   }, [messages, isSending]);
 
   useEffect(() => {
@@ -67,6 +119,14 @@ export default function Chatbot({
   const handleSend = async (userText?: string) => {
     const text = (userText ?? input).trim();
     if (!text) return;
+
+    // Handle lead collection if in progress
+    if (collectingLead) {
+      handleLeadCollection(text);
+      setInput('');
+      return;
+    }
+
     if (!apiKey) {
       setError('Missing VITE_GEMINI_API_KEY. Add it to your .env.local and restart.');
       return;
@@ -77,17 +137,38 @@ export default function Chatbot({
     setInput('');
     addMessage('user', text);
 
+    // Check if this is a demo request or contact request
+    const isDemoRequest = text.toLowerCase().includes('demo') || text.toLowerCase().includes('pricing');
+    const isContactRequest = text.toLowerCase().includes('contact') || text.toLowerCase().includes('talk to');
+
+    if (isDemoRequest || isContactRequest) {
+      startLeadCollection();
+      setIsSending(false);
+      return;
+    }
+
     try {
       if (!genAIRef.current) throw new Error('Gemini client not initialized');
       const modelInstance = genAIRef.current.getGenerativeModel({ model });
 
-      const result = await modelInstance.generateContent([text]);
+      // Include previous context and system prompt
+      const history = messages
+        .filter(m => m.role !== 'system')
+        .slice(-4)
+        .map(m => m.content);
+
+      const result = await modelInstance.generateContent([...history, text]);
       const reply = result.response.text() || 'No response.';
       addMessage('model', reply);
+
+      // Check if the response indicates we should collect lead info
+      if (reply.toLowerCase().includes('contact') || reply.toLowerCase().includes('demo')) {
+        setTimeout(() => startLeadCollection(), 1000);
+      }
     } catch (e: any) {
       console.error(e);
       setError(e?.message || 'Failed to get response');
-      addMessage('model', 'Sorry, something went wrong.');
+      addMessage('model', 'Sorry, something went wrong. Please try again or contact our support team.');
     } finally {
       setIsSending(false);
     }
@@ -126,37 +207,36 @@ export default function Chatbot({
               <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
               <h2 className="font-semibold text-white">Vyomira Assistant</h2>
             </div>
-            <div className="flex items-center gap-3 text-[11px] text-gray-300">
-              <span className="hidden sm:inline">{model}</span>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-1.5 rounded-md hover:bg-white/10 text-gray-200"
-                aria-label="Close chat"
-              >
-                <X size={16} />
-              </button>
-            </div>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-1.5 rounded-md hover:bg-white/10 text-gray-200"
+              aria-label="Close chat"
+            >
+              <X size={16} />
+            </button>
           </div>
 
           {/* Messages */}
           <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 space-y-4 text-gray-100">
-            {messages.length === 0 ? (
+            {messages.length <= 1 ? (
               <div className="text-center text-gray-300">
                 <p className="mb-3">{welcome}</p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  {suggestions.map((s) => (
+                  {SERVICE_SUGGESTIONS.map((suggestion) => (
                     <button
-                      key={s}
+                      key={suggestion}
                       className="text-sm px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10"
-                      onClick={() => handleSend(s)}
+                      onClick={() => handleSend(suggestion)}
                     >
-                      {s}
+                      {suggestion}
                     </button>
                   ))}
                 </div>
               </div>
             ) : (
-              messages.map((m) => (
+              messages
+                .filter(m => m.role !== 'system')
+                .map((m) => (
                 <div key={m.id} className={m.role === 'user' ? 'flex justify-end' : 'flex justify-start'}>
                   <div
                     className={[
@@ -165,9 +245,8 @@ export default function Chatbot({
                         ? 'bg-emerald-600 text-white'
                         : 'bg-white/5 text-gray-100 border border-white/10',
                     ].join(' ')}
-                  >
-                    {m.content}
-                  </div>
+                    dangerouslySetInnerHTML={{ __html: formatMessage(m.content) }}
+                  />
                 </div>
               ))
             )}
@@ -229,4 +308,3 @@ export default function Chatbot({
     </>
   );
 }
-    
