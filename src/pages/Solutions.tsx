@@ -241,12 +241,7 @@ export default function Solutions() {
             >
               Request Demo
             </a>
-            <a
-              href="/contact"
-              className="px-8 py-4 border border-white/20 rounded-lg font-medium hover:border-blue-500/50 hover:bg-blue-500/10 transition-all"
-            >
-              Contact Sales
-            </a>
+            
           </div>
         </div>
       </section>

@@ -154,10 +154,10 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 >
                   Explore Our Platform
-                </a>
+                </a >
                 {showCalendly && (
                   <CalendlyPopup
-                    url="https://calendly.com/vyomira/demo"
+                    url="https://calendly.com/rohit-vyomiratech/30min"
                     open={showCalendly}
                     onClose={() => setShowCalendly(false)}
                     title="Schedule a Demo"

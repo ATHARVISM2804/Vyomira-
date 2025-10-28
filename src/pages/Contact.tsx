@@ -161,13 +161,13 @@ export default function Contact() {
                     Book a Call
                     <ArrowRight size={16} className="ml-2" />
                   </button>
-                  <button
-                    onClick={() => setShowContactSale(true)}
+                  <a
+                    href="tel:+919034370807"
                     className="w-full px-4 py-3 border border-blue-500/30 bg-blue-500/10 rounded-lg font-medium hover:bg-blue-500/20 transition-all flex items-center justify-center"
                   >
                     Contact Sales
                     <ArrowRight size={16} className="ml-2" />
-                  </button>
+                  </a>
                 </div>
                 
                 {showBookCall && (
