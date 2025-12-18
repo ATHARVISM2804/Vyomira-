@@ -152,13 +152,16 @@ export default function Chatbot({
       if (!genAIRef.current) throw new Error('Gemini client not initialized');
       const modelInstance = genAIRef.current.getGenerativeModel({ model });
 
-      // Include previous context and system prompt
+      // Include system prompt and conversation history
       const history = messages
         .filter(m => m.role !== 'system')
         .slice(-4)
         .map(m => m.content);
 
-      const result = await modelInstance.generateContent([...history, text]);
+      // Prepend system prompt to provide context
+      const contextualPrompt = [SYSTEM_PROMPT, ...history, text].join('\n\n');
+
+      const result = await modelInstance.generateContent(contextualPrompt);
       const reply = result.response.text() || 'No response.';
       addMessage('model', reply);
 
