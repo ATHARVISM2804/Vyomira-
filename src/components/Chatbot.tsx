@@ -23,7 +23,8 @@ type ChatbotProps = {
   model?: string; // default: gemini-2.0-flash
 };
 
-const DEFAULT_MODEL = 'gemini-2.0-flash';
+// const DEFAULT_MODEL = 'gemini-2.5-flash';
+const DEFAULT_MODEL = 'gemini-3-flash-preview';
 
 const formatMessage = (text: string) => {
   return text
