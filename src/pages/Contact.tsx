@@ -98,8 +98,8 @@ export default function Contact() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Address</h3>
-                    <p className="text-gray-400">Office address:   5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002</p>
+                    <h3 className="font-semibold mb-1">Office Address</h3>
+                    <p className="text-gray-400">5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002</p>
                   </div>
                 </div>
 
@@ -122,8 +122,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
-                    <a href="tel:+91XXXXXXXXXX" className="text-blue-400 hover:text-blue-300 transition-colors">
-                     +91 90343 70807
+                    <a href="tel:01246620971" className="text-blue-400 hover:text-blue-300 transition-colors">
+                     0124-6620971
                     </a>
                   </div>
                 </div>

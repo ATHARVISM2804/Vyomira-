@@ -201,7 +201,7 @@ export default function Footer() {
         
         <PolicySection title="Contact Us">
           <PolicyParagraph>
-            If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@vyomira.com" className="text-cyan-400 hover:text-cyan-300 underline">privacy@vyomira.com</a>.
+            If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@vyomira.com" className="text-cyan-400 hover:text-cyan-300 underline">privacy@vyomira.com</a>
           </PolicyParagraph>
         </PolicySection>
       </>
