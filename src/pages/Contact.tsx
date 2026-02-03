@@ -92,6 +92,12 @@ export default function Contact() {
                 Contact Us
               </h2>
 
+              {/* Registered Company Name */}
+              <div className="p-4 border border-blue-500/20 rounded-lg bg-blue-500/5 mb-6">
+                <p className="text-sm text-gray-400">Registered Company</p>
+                <h3 className="text-lg font-semibold text-white">Vyomira Tech Solutions Pvt. Ltd.</h3>
+              </div>
+
               <div className="space-y-8 mb-12">
                 <div className="group flex items-start hover:scale-105 transition-transform duration-300">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:rotate-6 transition-transform">
@@ -99,7 +105,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Office Address</h3>
-                    <p className="text-gray-400">5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002</p>
+                    <p className="text-gray-400">5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002, India</p>
                   </div>
                 </div>
 
@@ -108,8 +114,8 @@ export default function Contact() {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:contact@vyomira.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+                    <h3 className="font-semibold mb-1">Support Email</h3>
+                    <a href="mailto:info@vyomiratech.com" className="text-blue-400 hover:text-blue-300 transition-colors">
                       info@vyomiratech.com
                     </a>
                     <p className="text-gray-400 text-sm mt-1">We'll respond within 24 hours</p>
@@ -293,6 +299,31 @@ export default function Contact() {
                 )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps Section - Full Width */}
+      <section className="pb-24 bg-gradient-to-b from-gray-950 to-black">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">
+              <span className="text-gradient">Find Us</span> on the Map
+            </h3>
+            <p className="text-gray-400">Visit our office at DLF Cyber City, Gurugram</p>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.6784799404296!2d77.08892231507847!3d28.4949950825196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19457c6b9ccb%3A0x8f8f8f8f8f8f8f8f!2sDLF%20Cyber%20City%2C%20DLF%20Phase%202%2C%20Sector%2024%2C%20Gurugram%2C%20Haryana%20122002!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Vyomira Office Location"
+              className="grayscale hover:grayscale-0 transition-all duration-500"
+            ></iframe>
           </div>
         </div>
       </section>

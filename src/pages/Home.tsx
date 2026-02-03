@@ -6,10 +6,10 @@ import Chatbot from '../components/Chatbot';
 export default function Home() {
   const [showCalendly, setShowCalendly] = useState(false);
   const stats = [
-    { value: '500+', label: 'Enterprise Clients' },
-    { value: '99.9%', label: 'Uptime SLA' },
-    { value: '60%', label: 'Cost Reduction' },
-    { value: '24/7', label: 'Expert Support' }
+    { value: '9+', label: 'Years Experience' },
+    { value: '100%', label: 'Audit Focus' },
+    { value: '24/7', label: 'Support' },
+    { value: '30-50%', label: 'Cost Reduction' }
   ];
 
   // const features = [
@@ -71,42 +71,37 @@ export default function Home() {
   // ];
 
   const benefits = [
-    'AI-Driven Cloud Intelligence – Detect anomalies, forecast usage, and optimize spend.',
-    'Security-First Architecture – Identify misconfigurations, enforce compliance, and stay audit-ready.',
-    'Unified Billing & Cost Control – Consolidate AWS, GCP, and Azure payments under one secure roof.',
-    'End-to-End DevOps Expertise – From architecture to automation, we help you build resilient systems.'
+    'Compliance & Security – Full architecture audits for PCI-DSS, ISO 27001, and HIPAA compliance.',
+    'Cloud Cost Optimization – Stop wasting money on idle AWS/GCP/Azure resources. We typically reduce spend by 30-50%.',
+    'Fractional DevOps – Get a Senior DevOps Engineer for a fraction of the cost of a full-time hire.',
+    'End-to-End DevOps Expertise – CI/CD, Automation, Infrastructure as Code, and 24/7 Maintenance included.'
   ];
 
-  const companyLogos = [
+  // Technology Stack logos (replacing fake client logos)
+  const techStackLogos = [
     { 
-      name: 'Fanatics', 
-      logo: '/logos/fanatics.svg',
-      color: 'from-blue-600/20 to-blue-800/20'
+      name: 'AWS', 
+      color: 'from-orange-600/20 to-orange-800/20'
     },
     { 
-      name: 'Microsoft', 
-      logo: '/logos/microsoft.svg',
+      name: 'Docker', 
       color: 'from-blue-500/20 to-cyan-500/20' 
     },
     { 
-      name: 'GitHub', 
-      logo: '/logos/github.svg',
+      name: 'Kubernetes', 
+      color: 'from-blue-600/20 to-blue-800/20' 
+    },
+    { 
+      name: 'Terraform', 
       color: 'from-purple-600/20 to-purple-800/20' 
     },
     { 
-      name: 'Accenture', 
-      logo: '/logos/accenture.svg',
-      color: 'from-indigo-600/20 to-indigo-800/20' 
-    },
-    { 
-      name: 'Kong', 
-      logo: '/logos/kong.svg',
+      name: 'Jenkins', 
       color: 'from-red-600/20 to-red-800/20' 
     },
     { 
-      name: 'Dell', 
-      logo: '/logos/dell.svg',
-      color: 'from-cyan-600/20 to-blue-800/20' 
+      name: 'Python', 
+      color: 'from-yellow-600/20 to-blue-800/20' 
     },
   ];
 
@@ -127,18 +122,18 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 glassmorphism rounded-full text-xs sm:text-sm text-blue-400">
-                <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
-                3.0 beta is live
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Now Accepting New Audit Clients
                 <ArrowRight size={14} className="hidden sm:inline-block" />
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[1.1]">
-                The fastest way to<br />
-                <span className="text-gradient">build tomorrow's cloud.</span>
+                Bank-Grade Cloud Security<br />
+                <span className="text-gradient">& DevOps for Your Business</span>
               </h1>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-400 leading-relaxed max-w-xl">
-                Vyomira Tech Solutions helps organizations take complete control of their cloud ecosystem with AI-powered insights, cost optimization, compliance automation, and managed DevOps services.
+                We bring FinTech-level compliance (PCI-DSS, ISO 27001) to every industry. Get Senior-Level Cloud Infrastructure that passes audits on Day 1.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -146,21 +141,21 @@ export default function Home() {
                   onClick={() => setShowCalendly(true)}
                   className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow text-sm sm:text-base"
                 >
-                  Schedule a Demo
+                  Get Your Free Security Check
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <a
-                  href="/platform"
+                  href="/solutions"
                   className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 >
-                  Explore Our Platform
+                  View Services
                 </a >
                 {showCalendly && (
                   <CalendlyPopup
                     url="https://calendly.com/rohit-vyomiratech/30min"
                     open={showCalendly}
                     onClose={() => setShowCalendly(false)}
-                    title="Schedule a Demo"
+                    title="Schedule Your Free Security Check"
                   />
                 )}
               </div>
@@ -179,10 +174,10 @@ export default function Home() {
                     <div className="absolute inset-0 top-8 bg-gradient-to-br from-gray-900 via-black to-gray-950 flex items-center justify-center p-12">
                       <div className="text-center space-y-6">
                         <h3 className="text-5xl sm:text-6xl font-bold tracking-tight">
-                          <span className="block text-gray-200">NEXT-GEN</span>
-                          <span className="block text-gradient">IS HERE</span>
+                          <span className="block text-gray-200">BANK-GRADE</span>
+                          <span className="block text-gradient">SECURITY</span>
                         </h3>
-                        <p className="text-gray-400 text-lg">Power anything you can imagine.</p>
+                        <p className="text-gray-400 text-lg">Senior-level DevOps from Day 1</p>
                         <div className="flex gap-2 justify-center">
                           <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
                         </div>
@@ -209,10 +204,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-950"></div>
                 <div className="text-center space-y-4 relative z-10 px-4">
                   <h3 className="text-3xl sm:text-4xl font-bold tracking-tight">
-                    <span className="block text-gray-200">NEXT-GEN</span>
-                    <span className="block text-gradient">IS HERE</span>
+                    <span className="block text-gray-200">BANK-GRADE</span>
+                    <span className="block text-gradient">SECURITY</span>
                   </h3>
-                  <p className="text-gray-400 text-sm sm:text-base">Power anything you can imagine.</p>
+                  <p className="text-gray-400 text-sm sm:text-base">Senior-level DevOps from Day 1</p>
                   <div className="flex gap-2 justify-center">
                     <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"></div>
                   </div>
@@ -248,15 +243,15 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="mb-16 sm:mb-20 text-center animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              Trusted by industry <span className="text-gradient">leaders</span>
+              Our Technology <span className="text-gradient">Stack</span>
             </h2>
             <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Vyomira powers mission-critical infrastructure for Fortune 500 companies worldwide
+              We leverage industry-leading tools to build secure, scalable infrastructure
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-            {companyLogos.map((company, idx) => (
+            {techStackLogos.map((tech, idx) => (
               <div
                 key={idx}
                 className="relative overflow-hidden group animate-fade-in"
@@ -278,18 +273,17 @@ export default function Home() {
                   <div className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-white/10 rounded-bl-md"></div>
                   <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-white/10 rounded-br-md"></div>
                   
-                  {/* Company name */}
+                  {/* Tech name */}
                   <div className="relative z-10 flex items-center justify-center">
                     <span className="text-xl sm:text-2xl font-medium text-gray-100 group-hover:text-white transition-colors">
-                      {company.name}
+                      {tech.name}
                     </span>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            ))}          </div>
           
-          {/* Enhanced testimonial card */}
+          {/* Founder's Message */}
           <div className="mt-8 sm:mt-12 animate-fade-in-up">
             <div className="rounded-2xl relative overflow-hidden">
               {/* Enhanced glassmorphism background */}
@@ -306,23 +300,18 @@ export default function Home() {
               <div className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-white/10 rounded-br-md"></div>
               
               <div className="relative p-8 sm:p-10">
-                <div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-10">
-                  <div className="w-full sm:w-1/4 flex-shrink-0 mb-6 sm:mb-0">
-                    <div className="relative h-20 w-full rounded-xl overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
-                      {/* Enterprise logo box */}
-                      <div className="absolute inset-0 bg-[#222] bg-opacity-70 backdrop-blur-md border border-white/10"></div>
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
-                      <div className="relative z-10 h-full flex items-center justify-center">
-                        <span className="text-2xl font-bold text-cyan-400">Enterprise</span>
-                      </div>
+                <div className="max-w-3xl mx-auto text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-6 text-gradient">The Vyomira Promise</h3>
+                  <p className="text-gray-200 text-base sm:text-lg leading-relaxed mb-6">
+                    "I started Vyomira to give startups the same security standards as banks. We don't outsource your security to juniors. You get senior-level attention from day one."
+                  </p>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-lg">
+                      RK
                     </div>
-                  </div>
-                  <div className="flex-1">
-                    <blockquote className="text-gray-200 text-sm sm:text-base italic">
-                      "Vyomira's cloud optimization platform reduced our AWS costs by 42% while improving overall performance. The implementation was seamless and their support team has been exceptional."
-                    </blockquote>
-                    <div className="mt-4 text-sm text-gray-400">
-                      <span className="font-medium text-white">Chief Technology Officer</span> • Fortune 100 Company
+                    <div className="text-left">
+                      <div className="font-semibold text-white">Rohit Kumar</div>
+                      <div className="text-sm text-gray-400">Founder, Vyomira Tech Solutions</div>
                     </div>
                   </div>
                 </div>
@@ -338,13 +327,13 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <div className="inline-block px-4 py-2 glassmorphism rounded-full text-sm text-cyan-400 mb-6">
-                Why Choose Vyomira
+                Our Core Services
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                Transform your cloud infrastructure with <span className="text-gradient">AI-powered automation</span>
+                Enterprise-grade DevOps <span className="text-gradient">without the enterprise price</span>
               </h2>
               <p className="text-gray-400 mb-8 text-base sm:text-lg">
-                Join hundreds of companies that have already modernized their cloud operations with Vyomira's intelligent platform.
+                We give startups and growing companies the same security standards as Fortune 500 companies.
               </p>
 
               <div className="space-y-4">

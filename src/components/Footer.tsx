@@ -1,4 +1,4 @@
-import { Linkedin, Mail, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube } from 'lucide-react';
+import { Linkedin, Mail, ArrowRight, Phone, MessageSquare, X, Instagram, Youtube, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import CalendlyPopup from './Calendlypopup';
 
@@ -122,13 +122,13 @@ export default function Footer() {
   // Simplified navigation links - single column
   const navigationLinks = [
     { label: 'Home', href: '/' },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'About', href: '/about' },
-    { label: 'Gallery', href: '/gallery' },
-    { label: 'Testimonials', href: '/testimonials' },
-    { label: 'Teams', href: '/teams' },
+    { label: 'Services', href: '/solutions' },
+    { label: 'About Us', href: '/about' },
+    // { label: 'Gallery', href: '/gallery' },
+    { label: 'Success Stories', href: '/testimonials' },
+    // { label: 'Teams', href: '/teams' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Platform', href: '/platform' }
+    // { label: 'Platform', href: '/platform' }
   ];
 
   const socialLinks = [
@@ -139,8 +139,9 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    { Icon: Mail, text: 'contact@vyomira.com', href: 'mailto:contact@vyomira.com' },
-    { Icon: Phone, text: '+91 9034370807', href: 'tel:+919034370807' },
+    { Icon: Mail, text: 'info@vyomiratech.com', href: 'mailto:info@vyomiratech.com' },
+    { Icon: Phone, text: '0124-6620971', href: 'tel:01246620971' },
+    { Icon: MapPin, text: '5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002, India', href: 'https://maps.google.com/?q=DLF+Cyber+City+Phase+2+Gurugram' },
     { Icon: MessageSquare, text: 'WhatsApp Chat', href: 'https://wa.me/919034370807?text=Hello%20Vyomira%2C%20I%27m%20interested%20in%20your%20services' }
   ];
 
@@ -441,7 +442,7 @@ export default function Footer() {
           {/* Copyright section */}
           <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600 text-center sm:text-left">
-              © 2025 Vyomira. All rights reserved. Built with precision and care.
+              © 2026 Vyomira Tech Solutions Pvt. Ltd. All Rights Reserved.
             </p>
             <div className="flex gap-6 text-sm text-gray-600">
               <button 
@@ -455,12 +456,6 @@ export default function Footer() {
                 className="hover:text-white transition-colors"
               >
                 Terms of Service
-              </button>
-              <button 
-                onClick={() => setActiveModal('cookies')}
-                className="hover:text-white transition-colors"
-              >
-                Cookie Policy
               </button>
             </div>
           </div>

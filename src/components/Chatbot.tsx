@@ -43,7 +43,7 @@ const formatMessage = (text: string) => {
 
 export default function Chatbot({
   className,
-  welcome = 'Hi! Ask me anything about Vyomira.',
+  welcome = "Hi, I'm Mira! I can help you book a Security Audit or check your Cloud Costs. How can I help you today?",
   model = DEFAULT_MODEL,
 }: ChatbotProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -189,7 +189,7 @@ export default function Chatbot({
       <button
         onClick={() => setIsOpen((v) => !v)}
         className="fixed bottom-5 right-5 z-50 group"
-        aria-label="Open Vyomira Assistant"
+        aria-label="Open Mira Chat"
       >
         <span className="relative inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-shadow">
           <MessageCircle className="text-white" size={26} />
@@ -209,7 +209,7 @@ export default function Chatbot({
           <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between bg-gradient-to-r from-blue-950/40 to-cyan-950/30">
             <div className="flex items-center gap-2">
               <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <h2 className="font-semibold text-white">Vyomira Assistant</h2>
+              <h2 className="font-semibold text-white">Mira</h2>
             </div>
             <button
               onClick={() => setIsOpen(false)}

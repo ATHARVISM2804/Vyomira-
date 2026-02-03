@@ -39,13 +39,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {[
               { label: 'Home', href: '/' },
-              { label: 'Solution', href: '/solutions' },
-              { label: 'About', href: '/about' },
-              { label: 'Gallery', href: '/gallery' },
-              { label: 'Testimonials', href: '/testimonials' },
-              { label: 'Teams', href: '/teams' },
+              { label: 'Services', href: '/solutions' },
+              { label: 'About Us', href: '/about' },
+              // { label: 'Gallery', href: '/gallery' },
+              { label: 'Success Stories', href: '/testimonials' },
+              // { label: 'Teams', href: '/teams' },
               { label: 'Contact', href: '/contact' },
-              { label: 'Platform', href: '/platform' }
+              // { label: 'Platform', href: '/platform' }
             ].map((item, idx) => (
               <a
                 key={idx}
@@ -66,7 +66,7 @@ export default function Navbar() {
               className="ml-4 px-4 lg:px-5 py-2 text-sm text-white bg-gradient-to-r from-blue-600 to-cyan-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
             >
               <Phone size={14} />
-              <span>Book a Call</span>
+              <span>Book Free Audit</span>
             </a>
           </div>
 
@@ -100,13 +100,13 @@ export default function Navbar() {
           <div className="px-4 sm:px-6 py-6 space-y-2">
             {[
               { label: 'Home', href: '/' },
-              { label: 'Solution', href: '/solutions' },
-              { label: 'About', href: '/about' },
-              { label: 'Gallery', href: '/gallery' },
-              { label: 'Testimonials', href: '/testimonials' },
-              { label: 'Teams', href: '/teams' },
+              { label: 'Services', href: '/solutions' },
+              { label: 'About Us', href: '/about' },
+              // { label: 'Gallery', href: '/gallery' },
+              { label: 'Success Stories', href: '/testimonials' },
+              // { label: 'Teams', href: '/teams' },
               { label: 'Contact', href: '/contact' },
-              { label: 'Platform', href: '/platform' }
+              // { label: 'Platform', href: '/platform' }
             ].map((item, idx) => (
               <a
                 key={idx}

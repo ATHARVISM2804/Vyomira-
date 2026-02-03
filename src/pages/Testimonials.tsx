@@ -1,27 +1,24 @@
-import { Star, Quote } from 'lucide-react';
+import { Shield, DollarSign, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function Testimonials() {
-  const testimonials = [
+  const successStories = [
     {
-      name: 'VP Security',
-      company: 'Payment Startup',
-      rating: 5,
-      text: 'Vyomira helped us pass our PCI DSS audit with zero non-conformities.',
-      image: '🔒'
+      title: 'FinTech Compliance Audit',
+      icon: Shield,
+      challenge: 'A financial services application required urgent PCI-DSS compliance to secure their Series A funding.',
+      solution: 'We architected a secure AWS environment using Private Subnets, AWS WAF, and GuardDuty. Implemented automated compliance checks using AWS Config.',
+      result: 'The infrastructure passed the third-party security audit in 2 weeks with zero critical vulnerabilities.',
+      resultHighlight: 'Zero Critical Vulnerabilities',
+      color: 'from-blue-500 to-cyan-400'
     },
     {
-      name: 'CTO',
-      company: 'SaaS Enterprise',
-      rating: 5,
-      text: 'From day one, Vyomira\'s team identified hidden cost leaks across our AWS accounts and saved us nearly 35%.',
-      image: '💰'
-    },
-    {
-      name: 'Head of DevOps',
-      company: 'Fintech Company',
-      rating: 5,
-      text: 'The unified dashboard and their quick response support team make cloud management effortless.',
-      image: '⚙️'
+      title: 'High-Scale Cost Optimization',
+      icon: DollarSign,
+      challenge: 'A SaaS platform was overspending by 40% on idle EC2 instances and unoptimized RDS databases.',
+      solution: 'We implemented an auto-scaling architecture and Spot Instance strategy for non-critical workloads.',
+      result: 'Reduced monthly cloud billing by 35% while maintaining 99.99% uptime.',
+      resultHighlight: '35% Cost Reduction',
+      color: 'from-green-500 to-emerald-400'
     }
   ];
 
@@ -33,84 +30,85 @@ export default function Testimonials() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="max-w-3xl mb-16 text-center mx-auto animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 glassmorphism rounded-full text-sm text-cyan-400 mb-6">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+              Real Results, Real Impact
+            </div>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Our Clients <span className="text-gradient">Speak for Us</span>
+              Recent <span className="text-gradient">Success Stories</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              Real stories from companies that transformed their cloud operations with Vyomira.
+              See how we've helped companies achieve bank-grade security and significant cost savings.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
+          {/* Success Story Cards */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-16">
+            {successStories.map((story, idx) => (
               <div
                 key={idx}
-                className="group p-8 glassmorphism rounded-2xl hover:glassmorphism-strong transition-all duration-500 hover:scale-105 animate-fade-in-up"
-                style={{ animationDelay: `${idx * 100}ms` }}
+                className="group glassmorphism rounded-2xl p-8 hover:glassmorphism-strong transition-all duration-500 animate-fade-in-up"
+                style={{ animationDelay: `${idx * 150}ms` }}
               >
-                <div className="relative mb-6">
-                  <Quote className="absolute -top-2 -left-2 text-blue-500/20 w-12 h-12" />
-                  <div className="flex items-center gap-1 relative z-10">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
-                    ))}
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${story.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <story.icon size={28} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white">{story.title}</h3>
+                    <div className={`inline-block px-3 py-1 mt-1 rounded-full text-xs font-medium bg-gradient-to-r ${story.color} text-white`}>
+                      {story.resultHighlight}
+                    </div>
                   </div>
                 </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed text-lg font-medium">"{testimonial.text}"</p>
+                {/* Challenge */}
+                <div className="mb-5">
+                  <h4 className="text-sm font-semibold text-red-400 uppercase tracking-wider mb-2">The Challenge</h4>
+                  <p className="text-gray-300 leading-relaxed">{story.challenge}</p>
+                </div>
 
-                <div className="flex items-center gap-4 pt-6 border-t border-white/5">
-                  <div className="w-12 h-12 glassmorphism rounded-full flex items-center justify-center text-2xl">
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-400">{testimonial.company}</p>
+                {/* Solution */}
+                <div className="mb-5">
+                  <h4 className="text-sm font-semibold text-blue-400 uppercase tracking-wider mb-2">Our Solution</h4>
+                  <p className="text-gray-300 leading-relaxed">{story.solution}</p>
+                </div>
+
+                {/* Result */}
+                <div className="p-4 rounded-xl bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle size={20} className="text-green-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-green-400 uppercase tracking-wider mb-1">Result</h4>
+                      <p className="text-white font-medium">{story.result}</p>
+                    </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-20">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="glassmorphism rounded-2xl p-8 sm:p-12 h-full">
-                <h3 className="text-3xl font-bold mb-6">Featured Success Stories</h3>
-                <ul className="space-y-6">
-                  <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-blue-400">35% Cost Reduction</h4>
-                      <p className="text-gray-400">For a SaaS platform running on AWS, Azure, and GCP</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-blue-400">PCI DSS Compliance</h4>
-                      <p className="text-gray-400">Zero non-conformities for a payment processing startup</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center text-sm flex-shrink-0 mt-1">✓</div>
-                    <div>
-                      <h4 className="font-semibold text-lg text-blue-400">99.99% Uptime</h4>
-                      <p className="text-gray-400">For a critical fintech application with 24/7 support</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="glassmorphism rounded-2xl p-8 sm:p-12 h-full flex flex-col justify-center">
-                <h3 className="text-3xl font-bold mb-6">Join Our Success Story</h3>
-                <p className="text-gray-400 mb-8">Experience the Vyomira difference with our cloud experts by your side.</p>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 animate-glow"
-                >
-                  Schedule a Consultation
-                </a>
-              </div>
+          {/* CTA Section */}
+          <div className="glassmorphism rounded-2xl p-8 sm:p-12 text-center animate-fade-in-up">
+            <h3 className="text-3xl font-bold mb-4">Ready to Write Your Success Story?</h3>
+            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+              Let's discuss how we can bring bank-grade security and cost optimization to your infrastructure.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 group animate-glow"
+              >
+                Get Your Free Security Audit
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="/solutions"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 glassmorphism-strong rounded-lg font-medium hover:bg-white/10 transition-all duration-300"
+              >
+                View Our Services
+              </a>
             </div>
           </div>
         </div>
