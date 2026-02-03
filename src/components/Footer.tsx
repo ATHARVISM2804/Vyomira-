@@ -149,7 +149,7 @@ export default function Footer() {
   const policyContent = {
     privacy: (
       <>
-        <div className="text-sm text-gray-400 mb-6 pb-6 border-b border-white/5">Last updated: June 1, 2025</div>
+        <div className="text-sm text-gray-400 mb-6 pb-6 border-b border-white/5">Last updated: February 3, 2026</div>
         
         <PolicySection title="Introduction">
           <PolicyParagraph>
@@ -202,7 +202,7 @@ export default function Footer() {
         
         <PolicySection title="Contact Us">
           <PolicyParagraph>
-            If you have questions about this Privacy Policy, please contact us at <a href="mailto:privacy@vyomira.com" className="text-cyan-400 hover:text-cyan-300 underline">privacy@vyomira.com</a>
+            If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@vyomiratech.com" className="text-cyan-400 hover:text-cyan-300 underline">info@vyomiratech.com</a>
           </PolicyParagraph>
         </PolicySection>
       </>
@@ -210,7 +210,7 @@ export default function Footer() {
     
     terms: (
       <>
-        <div className="text-sm text-gray-400 mb-6 pb-6 border-b border-white/5">Last updated: June 1, 2025</div>
+        <div className="text-sm text-gray-400 mb-6 pb-6 border-b border-white/5">Last updated: February 3, 2026</div>
         
         <PolicySection title="Acceptance of Terms">
           <PolicyParagraph>
