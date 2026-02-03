@@ -24,16 +24,16 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative">
         <div className="flex justify-between items-center h-16 sm:h-18">
-          <a href="/" className="flex items-center space-x-3 group relative z-10">
+          <a href="/" className="flex items-center space-x-1 group relative z-10">
             <div className="relative">
               {/* Replace the icon with the Cloudinary image */}
               <img 
-                src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1760688501/Screenshot_2025-10-17_133657_k6alu1.png" 
+                src="https://res.cloudinary.com/dmhabztbf/image/upload/v1770127502/Vyomira_1_copy_3-removebg-preview_qsaev9.png" 
                 alt="Vyomira Logo" 
-                className="w-8 h-8 sm:w-10 sm:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-110 transition-transform duration-300"
               />
             </div>
-            <span className="text-base sm:text-lg font-bold text-white group-hover:text-gradient transition-all">Vyomira</span>
+            <span className="text-xs sm:text-sm font-medium text-white group-hover:text-gradient transition-all">Vyomira</span>
           </a>
 
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">

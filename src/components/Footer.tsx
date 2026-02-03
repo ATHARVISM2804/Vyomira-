@@ -352,18 +352,18 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
             {/* Left column: Logo and company text */}
             <div>
-              <div className="flex items-center space-x-3 mb-6 group">
+              <div className="flex items-center space-x-1 mb-6 group">
                 <div className="relative">
                   {/* Replace Sparkles icon with the new logo */}
-                  <div className="w-12 h-12 flex items-center justify-center">
+                  <div className="w-16 h-16 flex items-center justify-center">
                     <img 
-                      src="https://res.cloudinary.com/dinhcaf2c/image/upload/v1760688501/Screenshot_2025-10-17_133657_k6alu1.png" 
+                      src="https://res.cloudinary.com/dmhabztbf/image/upload/v1770127502/Vyomira_1_copy_3-removebg-preview_qsaev9.png" 
                       alt="Vyomira Logo" 
                       className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </div>
-                <span className="text-lg font-bold text-white">Vyomira</span>
+                <span className="text-sm font-medium text-white">Vyomira</span>
               </div>
               
               <div className="mt-6">
