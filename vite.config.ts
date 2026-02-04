@@ -8,14 +8,8 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
-    // Enable minification
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    // Use esbuild for minification (built-in, no extra dependency needed)
+    minify: 'esbuild',
     // Code splitting for better caching
     rollupOptions: {
       output: {
@@ -27,13 +21,7 @@ export default defineConfig({
     },
     // Optimize chunk size
     chunkSizeWarningLimit: 1000,
-    // Enable source maps for production debugging (optional)
+    // Disable source maps for production
     sourcemap: false,
-  },
-  // Enable gzip compression hint
-  server: {
-    headers: {
-      'Cache-Control': 'public, max-age=31536000',
-    },
   },
 });
