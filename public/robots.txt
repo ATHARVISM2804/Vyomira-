@@ -1,0 +1,16 @@
+# Robots.txt for Vyomira Tech Solutions
+# https://www.vyomiratech.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.vyomiratech.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
+
+# Disallow admin and private pages
+Disallow: /login
+Disallow: /api/
+Disallow: /*.json$

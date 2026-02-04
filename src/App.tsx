@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Gallery from './pages/Gallery';
 import Testimonials from './pages/Testimonials';
 import Teams from './pages/Teams';
+import NotFound from './pages/NotFound';
 import Chatbot from './components/Chatbot';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   useEffect(() => {
     const path = window.location.pathname;
+    
     if (path === '/about') setCurrentPage('about');
     else if (path === '/solutions') setCurrentPage('solutions');
     else if (path === '/platform') setCurrentPage('platform');
@@ -26,7 +28,8 @@ function App() {
     else if (path === '/gallery') setCurrentPage('gallery');
     else if (path === '/testimonials') setCurrentPage('testimonials');
     else if (path === '/teams') setCurrentPage('teams');
-    else setCurrentPage('home');
+    else if (path === '/' || path === '') setCurrentPage('home');
+    else setCurrentPage('notfound');
 
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -44,7 +47,8 @@ function App() {
         else if (href === '/gallery') setCurrentPage('gallery');
         else if (href === '/testimonials') setCurrentPage('testimonials');
         else if (href === '/teams') setCurrentPage('teams');
-        else setCurrentPage('home');
+        else if (href === '/') setCurrentPage('home');
+        else setCurrentPage('notfound');
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -64,6 +68,7 @@ function App() {
       case 'gallery': return <Gallery />;
       case 'testimonials': return <Testimonials />;
       case 'teams': return <Teams />;
+      case 'notfound': return <NotFound />;
       default: return <Home />;
     }
   };
