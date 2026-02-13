@@ -77,31 +77,104 @@ export default function Home() {
     'End-to-End DevOps Expertise – CI/CD, Automation, Infrastructure as Code, and 24/7 Maintenance included.'
   ];
 
-  // Technology Stack logos (replacing fake client logos)
-  const techStackLogos = [
+  // Technology Stack with SVG icons
+  const techStackItems = [
     { 
       name: 'AWS', 
-      color: 'from-orange-600/20 to-orange-800/20'
+      subtitle: 'Cloud Infrastructure',
+      glowColor: '#FF9900',
+      gradientFrom: 'from-orange-500/20',
+      gradientTo: 'to-amber-600/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <path d="M18.9 32.2c0 1.1.1 2 .4 2.6.2.5.4 1 .8 1.6.1.2.2.4.2.5 0 .2-.1.4-.4.7l-1.4.9c-.2.1-.4.2-.5.2-.2 0-.4-.1-.6-.3-.3-.3-.5-.6-.7-.9-.2-.3-.4-.7-.6-1.2-1.5 1.8-3.4 2.7-5.7 2.7-1.6 0-2.9-.5-3.9-1.4-1-.9-1.5-2.2-1.5-3.8 0-1.7.6-3.1 1.8-4.1 1.2-1 2.9-1.5 5-1.5.7 0 1.4.1 2.1.2.8.1 1.5.3 2.3.5v-1.5c0-1.5-.3-2.6-1-3.2-.6-.7-1.7-1-3.3-1-.7 0-1.4.1-2.2.3-.7.2-1.5.5-2.2.8-.3.2-.6.3-.7.3-.2 0-.3-.2-.3-.5v-1.1c0-.3 0-.5.1-.6.1-.1.2-.3.5-.4.7-.4 1.5-.7 2.5-1 1-.3 2-.4 3.1-.4 2.4 0 4.1.5 5.2 1.6 1.1 1.1 1.7 2.7 1.7 4.9v6.4zm-7.8 2.9c.7 0 1.4-.1 2.1-.4.8-.3 1.4-.7 2-1.3.3-.4.6-.8.7-1.3.1-.5.2-1 .2-1.7v-.8c-.6-.2-1.2-.3-1.8-.4-.7-.1-1.3-.1-2-.1-1.3 0-2.3.3-3 .8-.6.5-1 1.3-1 2.3 0 .9.2 1.6.8 2.1.5.5 1.2.8 2 .8zm15.4 2c-.3 0-.5 0-.6-.1-.2-.1-.3-.3-.4-.7l-4.5-14.8c-.1-.3-.2-.5-.2-.7 0-.3.1-.4.4-.4h2.2c.3 0 .5 0 .6.1.2.1.3.3.4.7l3.2 12.6L30 21.4c.1-.3.2-.6.4-.7.1-.1.4-.1.7-.1h1.8c.3 0 .5 0 .7.1.1.1.3.3.4.7l3.2 12.7 3.3-12.7c.1-.3.2-.6.4-.7.1-.1.4-.1.6-.1h2.1c.3 0 .4.1.4.4 0 .1 0 .2 0 .3 0 .1-.1.3-.2.5l-4.6 14.8c-.1.3-.2.6-.4.7-.1.1-.4.1-.6.1h-1.9c-.3 0-.5 0-.7-.1s-.3-.3-.4-.7l-3.1-12.2-3.1 12.2c-.1.3-.2.6-.4.7-.1.1-.4.1-.7.1h-1.9zm24.6.6c-1 0-2.1-.1-3-.4-1-.3-1.8-.6-2.3-1-.3-.2-.5-.4-.6-.6 0-.2-.1-.3-.1-.5v-1.1c0-.3.1-.5.3-.5.1 0 .2 0 .3.1.1.1.3.1.5.3.7.3 1.4.6 2.2.8.8.2 1.5.3 2.3.3 1.2 0 2.2-.2 2.8-.7.6-.5.9-1.1.9-2 0-.6-.2-1.1-.5-1.4-.4-.4-1-.7-1.9-1l-2.7-.8c-1.4-.4-2.4-1.1-3-2-.6-.8-.9-1.8-.9-2.8 0-.8.2-1.5.5-2.2.4-.6.8-1.2 1.5-1.6.6-.4 1.3-.8 2.1-1 .8-.2 1.7-.3 2.6-.3.5 0 .9 0 1.4.1.5.1.9.2 1.3.3.4.1.8.2 1.1.4.3.1.6.3.8.4.3.2.4.3.5.5.1.2.1.4.1.7v1c0 .3-.1.5-.3.5-.1 0-.3-.1-.6-.3-1.2-.6-2.5-.8-3.9-.8-1.1 0-2 .2-2.6.6-.6.4-.9 1-.9 1.8 0 .6.2 1.1.6 1.5.4.4 1.1.7 2.1 1.1L52 27c1.4.4 2.3 1.1 2.9 1.9.6.8.8 1.7.8 2.7 0 .8-.2 1.6-.5 2.3-.3.7-.8 1.3-1.5 1.8-.6.5-1.3.9-2.2 1.1-.9.3-1.8.5-2.8.5z" fill="#FF9900"/>
+          <path d="M52.8 47.7c-6.2 4.6-15.3 7-23 7-10.9 0-20.7-4-28.1-10.7-.6-.5-.1-1.3.6-.8 8 4.6 17.9 7.4 28.1 7.4 6.9 0 14.5-1.4 21.4-4.4 1.1-.3 1.9.8.9 1.5z" fill="#FF9900"/>
+          <path d="M55.5 44.6c-.8-1-5.1-.5-7.1-.2-.6.1-.7-.4-.2-.8 3.5-2.4 9.1-1.7 9.8-.9.6.8-.2 6.3-3.4 9-.5.4-1 .2-.8-.3.8-1.9 2.4-6 1.7-6.8z" fill="#FF9900"/>
+        </svg>
+      )
     },
     { 
       name: 'Docker', 
-      color: 'from-blue-500/20 to-cyan-500/20' 
+      subtitle: 'Containerization',
+      glowColor: '#2496ED',
+      gradientFrom: 'from-blue-500/20',
+      gradientTo: 'to-cyan-500/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <path d="M59.4 25.4c-1.4-1-4.6-1.3-7.1-.8-.3-2.3-1.7-4.3-3.9-6l-1.3-.9-.9 1.3c-1.2 1.8-1.8 4.2-1.6 6.3.1 1.1.4 2.5 1.2 3.5-.8.5-1.6.8-2.4 1.1-1.5.5-3.1.7-4.6.7H4.2l-.1 1.3c-.3 3.4.2 6.9 1.7 10.2l.1.1c3.1 5.6 8.2 8.1 14.7 8.1 12.5 0 22.7-5.4 28.3-18.7 2.2.1 5.1 0 6.9-1.8.5-.5 1-1.3 1.3-2.2l.4-1.2-1.1-.7z" fill="#2496ED"/>
+          <rect x="29.4" y="5.7" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="29.4" y="13" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="21.6" y="13" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="13.8" y="13" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="29.4" y="20.3" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="21.6" y="20.3" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="13.8" y="20.3" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="6" y="20.3" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+          <rect x="37.2" y="20.3" width="6.1" height="5.6" rx=".4" fill="#2496ED"/>
+        </svg>
+      )
     },
     { 
       name: 'Kubernetes', 
-      color: 'from-blue-600/20 to-blue-800/20' 
+      subtitle: 'Container Orchestration',
+      glowColor: '#326CE5',
+      gradientFrom: 'from-blue-600/20',
+      gradientTo: 'to-indigo-600/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <path d="M32 6.5c-1.1 0-2.1.5-2.7 1.4L11.5 26.3c-.6.9-.8 2-.5 3l6.6 22.1c.3 1 1.1 1.9 2.1 2.3l20.6 8.8c1 .4 2.1.4 3 0l20.6-8.8c1-.4 1.8-1.2 2.1-2.3l6.6-22.1c.3-1 .1-2.1-.5-3L54.7 7.9c-.6-.9-1.6-1.4-2.7-1.4H32z" fill="#326CE5" opacity=".1"/>
+          <path d="M32 10c-.6 0-1.1.3-1.5.7L14.7 27.1c-.3.5-.4 1.1-.3 1.6l3.6 12c.2.5.6 1 1.1 1.2l11.2 4.8c.5.2 1.1.2 1.7 0l11.2-4.8c.5-.2.9-.7 1.1-1.2l3.6-12c.2-.5.1-1.1-.3-1.6L30.5 10.7c-.4-.4-.9-.7-1.5-.7z" fill="#326CE5"/>
+          <path d="M32 18v2m0 18v2m7-16l-1.7 1m-10.6 6.2L25 32.2m14 0l-1.7-1m-10.6-6.2L25 24m0 8.2h2m10 0h2m-7-5.5v11" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+          <circle cx="32" cy="28.7" r="2.5" fill="white"/>
+        </svg>
+      )
     },
     { 
       name: 'Terraform', 
-      color: 'from-purple-600/20 to-purple-800/20' 
+      subtitle: 'Infrastructure as Code',
+      glowColor: '#7B42BC',
+      gradientFrom: 'from-purple-600/20',
+      gradientTo: 'to-violet-600/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <path d="M22.5 11v14.5l12.6 7.3V18.3L22.5 11z" fill="#7B42BC"/>
+          <path d="M36.9 18.3v14.5l12.6-7.3V11l-12.6 7.3z" fill="#7B42BC" opacity=".7"/>
+          <path d="M8 3.8v14.5l12.6 7.3V11.1L8 3.8z" fill="#7B42BC" opacity=".5"/>
+          <path d="M22.5 40.7v14.5L35.1 48V33.5l-12.6 7.2z" fill="#7B42BC"/>
+        </svg>
+      )
     },
     { 
       name: 'Jenkins', 
-      color: 'from-red-600/20 to-red-800/20' 
+      subtitle: 'CI/CD Pipeline',
+      glowColor: '#D33833',
+      gradientFrom: 'from-red-500/20',
+      gradientTo: 'to-rose-600/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <circle cx="32" cy="32" r="24" fill="#D33833" opacity=".15"/>
+          <circle cx="32" cy="28" r="12" fill="#D33833" opacity=".3"/>
+          <path d="M32 16c-6.6 0-12 5.4-12 12 0 4.4 2.4 8.3 6 10.4V44c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5.6c3.6-2.1 6-6 6-10.4 0-6.6-5.4-12-12-12z" fill="#D33833"/>
+          <path d="M28 46h8v2c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-2z" fill="#D33833" opacity=".8"/>
+          <circle cx="28" cy="26" r="2" fill="white"/>
+          <circle cx="36" cy="26" r="2" fill="white"/>
+          <path d="M28 32c0 0 2 3 4 3s4-3 4-3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+          <path d="M24 18l-3-4M40 18l3-4M32 16v-4" stroke="#D33833" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      )
     },
     { 
       name: 'Python', 
-      color: 'from-yellow-600/20 to-blue-800/20' 
+      subtitle: 'Automation & Scripting',
+      glowColor: '#FFD43B',
+      gradientFrom: 'from-yellow-500/20',
+      gradientTo: 'to-blue-600/10',
+      icon: (
+        <svg viewBox="0 0 64 64" className="w-12 h-12 sm:w-14 sm:h-14" fill="none">
+          <path d="M31.9 8c-7 0-6.6 3-6.6 3l0 3.1h6.7v.9H19.8s-4.5-.5-4.5 6.6 3.9 6.8 3.9 6.8h2.3v-3.3s-.1-3.9 3.9-3.9h6.7s3.7.1 3.7-3.6V12.4S36.5 8 31.9 8zM28.3 11c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2-1.2-.5-1.2-1.2.5-1.2 1.2-1.2z" fill="#3776AB"/>
+          <path d="M32.1 56c7 0 6.6-3 6.6-3l0-3.1h-6.7v-.9h12.2s4.5.5 4.5-6.6-3.9-6.8-3.9-6.8h-2.3v3.3s.1 3.9-3.9 3.9h-6.7s-3.7-.1-3.7 3.6V51.6s-.7 4.4 3.9 4.4zm3.6-3c-.7 0-1.2-.5-1.2-1.2s.5-1.2 1.2-1.2 1.2.5 1.2 1.2-.5 1.2-1.2 1.2z" fill="#FFD43B"/>
+        </svg>
+      )
     },
   ];
 
@@ -250,38 +323,65 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-            {techStackLogos.map((tech, idx) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 sm:gap-7">
+            {techStackItems.map((tech, idx) => (
               <div
                 key={idx}
                 className="relative overflow-hidden group animate-fade-in"
-                style={{ animationDelay: `${idx * 100}ms` }}
+                style={{ animationDelay: `${idx * 120}ms` }}
               >
-                <div className="h-36 sm:h-40 rounded-2xl flex items-center justify-center p-6 transition-all duration-500 hover:scale-[1.02] relative">
-                  {/* Enhanced glassmorphism background */}
-                  <div className="absolute inset-0 bg-[#1a1a1a] bg-opacity-40 backdrop-blur-md rounded-2xl border border-white/5"></div>
+                {/* Animated gradient border */}
+                <div 
+                  className="absolute -inset-[1px] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-[1px]" 
+                  style={{ background: `linear-gradient(135deg, ${tech.glowColor}40, transparent 50%, ${tech.glowColor}20)` }}
+                ></div>
+                
+                <div className="relative h-44 sm:h-52 rounded-2xl flex flex-col items-center justify-center p-6 transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 cursor-default">
+                  {/* Dark background */}
+                  <div className="absolute inset-0 bg-[#111318] rounded-2xl border border-white/[0.06]"></div>
                   
-                  {/* Subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl opacity-40"></div>
+                  {/* Subtle gradient overlay matching tech color */}
+                  <div 
+                    className={`absolute inset-0 bg-gradient-to-br ${tech.gradientFrom} ${tech.gradientTo} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                  ></div>
                   
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Top shine line */}
+                  <div 
+                    className="absolute top-0 left-[20%] right-[20%] h-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    style={{ background: `linear-gradient(90deg, transparent, ${tech.glowColor}60, transparent)` }}
+                  ></div>
                   
-                  {/* Corner accents */}
-                  <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-white/10 rounded-tl-md"></div>
-                  <div className="absolute top-0 right-0 w-6 h-6 border-t border-r border-white/10 rounded-tr-md"></div>
-                  <div className="absolute bottom-0 left-0 w-6 h-6 border-b border-l border-white/10 rounded-bl-md"></div>
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-white/10 rounded-br-md"></div>
+                  {/* Corner accents with tech color */}
+                  <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-white/[0.08] rounded-tl-2xl group-hover:border-white/20 transition-colors duration-500"></div>
+                  <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/[0.08] rounded-br-2xl group-hover:border-white/20 transition-colors duration-500"></div>
                   
-                  {/* Tech name */}
-                  <div className="relative z-10 flex items-center justify-center">
-                    <span className="text-xl sm:text-2xl font-medium text-gray-100 group-hover:text-white transition-colors">
-                      {tech.name}
-                    </span>
+                  {/* Radial glow behind icon on hover */}
+                  <div 
+                    className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl"
+                    style={{ backgroundColor: `${tech.glowColor}15` }}
+                  ></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 flex flex-col items-center gap-3 sm:gap-4">
+                    {/* Icon container */}
+                    <div className="transform group-hover:scale-110 transition-transform duration-500">
+                      {tech.icon}
+                    </div>
+                    
+                    {/* Tech name */}
+                    <div className="text-center">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-100 group-hover:text-white transition-colors duration-300">
+                        {tech.name}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-1">
+                        {tech.subtitle}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}          </div>
+            ))}
+          </div>
           
           {/* Founder's Message */}
           <div className="mt-8 sm:mt-12 animate-fade-in-up">

@@ -142,7 +142,7 @@ export default function Footer() {
     { Icon: Mail, text: 'info@vyomiratech.com', href: 'mailto:info@vyomiratech.com' },
     { Icon: Phone, text: '0124-6620971', href: 'tel:01246620971' },
     { Icon: MapPin, text: '5th Floor, Tower A, Building 10, DLF Cyber City, DLF Phase 2, Sector 24, Gurugram, Haryana - 122002, India', href: 'https://maps.google.com/?q=DLF+Cyber+City+Phase+2+Gurugram' },
-    { Icon: MessageSquare, text: 'WhatsApp Chat', href: 'https://wa.me/919034370807?text=Hello%20Vyomira%2C%20I%27m%20interested%20in%20your%20services' }
+    { Icon: MessageSquare, text: 'WhatsApp Chat', href: 'https://wa.me/917900363000?text=Hello%20Vyomira%2C%20I%27m%20interested%20in%20your%20services' }
   ];
 
   // Enhanced policy content
